@@ -26,12 +26,12 @@ $active = $active ?? '';
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     <nav class="main-nav" aria-label="Primary navigation">
-      <a class="" href="<?= e(url('index.php')) ?>">Home</a>
-      <a class="" href="<?= e(url('about.php')) ?>">About Us</a>
-      <a class="" href="<?= e(url('services.php')) ?>">Services</a>
-      <a class="" href="<?= e(url('blogs.php')) ?>">Blog</a>
-      <a class="" href="<?= e(url('contact.php')) ?>">Contact Us</a>
-      <a class="nav-cta" href="<?= e(url('contact.php')) ?>">Book Consultation <span>↗</span></a>
+      <a class="" href="<?= e(url('index.php')) ?>" title="home">Home</a>
+      <a class="" href="<?= e(url('about.php')) ?>" title="about">About Us</a>
+      <a class="" href="<?= e(url('services.php')) ?>" title="services">Services</a>
+      <a class="" href="<?= e(url('blogs.php')) ?>" title="blogs">Blog</a>
+      <a class="" href="<?= e(url('contact.php')) ?>" title="contact">Contact Us</a>
+      <a class="nav-cta" href="<?= e(url('contact.php')) ?>" title="book consultation">Book Consultation <span>↗</span></a>
     </nav>
   </div>
 </header>
