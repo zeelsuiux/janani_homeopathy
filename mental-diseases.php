@@ -71,7 +71,7 @@ require 'header.php';
 
         <div class="two-col-grid">
             <div class="info-panel">
-                <h3>Common symptoms include:</h3>
+                <h2>Common symptoms include:</h2>
                 <ul class="check-list">
                     <li>Persistent sadness, hopelessness, or low mood</li>
                     <li>Excessive worry, fear, or nervousness</li>
@@ -83,7 +83,7 @@ require 'header.php';
             </div>
 
             <div class="info-panel">
-                <h3>Possible causes may include:</h3>
+                <h2>Possible causes may include:</h2>
                 <ul class="check-list">
                     <li>Stress, trauma, or emotional pressure</li>
                     <li>Family history and genetic predisposition</li>

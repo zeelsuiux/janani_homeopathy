@@ -703,6 +703,10 @@ th {
     box-shadow: 0 10px 30px rgba(3, 91, 64, .04)
 }
 
+.feature-card:hover{
+    background: #e6f6ef;
+}
+
 .feature-card h3 {
     margin: 16px 0 10px;
     color: var(--dark)
@@ -726,8 +730,8 @@ th {
     padding: 28px
 }
 
-.info-panel h3 {
-    color: var(--dark);
+.info-panel h2 {
+    color: var(--primary);
     margin-top: 0
 }
 
@@ -738,7 +742,7 @@ th {
 }
 
 .check-list li {
-    margin: 10px 0
+    margin: 8px 0
 }
 
 .steps-grid {
@@ -753,6 +757,10 @@ th {
     border: 1px solid #e5eee9;
     padding: 28px 22px;
     box-shadow: 0 10px 30px rgba(3, 91, 64, .04)
+}
+
+.step-box:hover {
+    background: #e6f6ef;
 }
 
 .step-box span {
@@ -789,6 +797,10 @@ th {
     border-radius: 12px;
     padding: 18px 20px;
     margin-bottom: 12px
+}
+
+.faq-list details[open] {
+    background: #e6f6ef
 }
 
 .faq-list summary {
