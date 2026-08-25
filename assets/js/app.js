@@ -1,0 +1,2 @@
+const toggle=document.querySelector('.mobile-toggle');if(toggle){toggle.addEventListener('click',()=>document.querySelector('.nav').classList.toggle('open'))}
+function calcAge(){const dob=document.getElementById('dob'),age=document.getElementById('age');if(!dob||!age)return;const d=new Date(dob.value);if(isNaN(d))return;const t=new Date();let a=t.getFullYear()-d.getFullYear();const m=t.getMonth()-d.getMonth();if(m<0||(m===0&&t.getDate()<d.getDate()))a--;age.value=Math.max(0,a)}

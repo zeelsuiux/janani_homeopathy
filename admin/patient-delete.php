@@ -1,0 +1,1 @@
+<?php require 'header.php'; $db=db_load(); $id=get('id'); $db['patients']=array_values(array_filter($db['patients'],fn($p)=>$p['id']!==$id)); $db['appointments']=array_values(array_filter($db['appointments'],fn($a)=>$a['patient_id']!==$id)); db_save($db); redirect('patients.php');
