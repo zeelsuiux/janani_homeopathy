@@ -15,11 +15,13 @@ require 'header.php';
                 <a class="btn btn-outline" href="contact.php">Consult Doctor</a>
             </div>
             <div class="treatment-badges">
-                <span>Anxiety</span>
+                <span>Anxiety &amp; Stress</span>
                 <span>Depression</span>
-                <span>PTSD</span>
-                <span>Bipolar</span>
+                <span>Phobias &amp; Fears</span>
                 <span>OCD</span>
+                <span>Panic Attacks</span>
+                <span>Sleep Disorders</span>
+                <span>Mood &amp; Behavioural Problems</span>
             </div>
         </div>
 
@@ -29,6 +31,36 @@ require 'header.php';
                 <strong>Personalized Care</strong>
                 <span>Natural, gentle homeopathic treatment with a holistic view of mind and body.</span>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Mental Health Care</div>
+            <h2>Conditions we support</h2>
+            <p>Personalized care for emotional, mental, sleep, and behavioural concerns.</p>
+        </div>
+
+        <div class="feature-list">
+            <?php foreach (
+                [
+                    ['Anxiety & Stress', 'Support for excessive worry, nervousness, tension, and stress affecting everyday life.'],
+                    ['Depression', 'Compassionate care for persistent sadness, low mood, loss of interest, and emotional exhaustion.'],
+                    ['Phobias & Fears', 'Guidance for intense fears, avoidance, and anxiety triggered by specific situations or objects.'],
+                    ['OCD', 'Individualized support for recurring unwanted thoughts and repetitive behaviours or rituals.'],
+                    ['Panic Attacks', 'Care for sudden episodes of intense fear, physical discomfort, breathlessness, or a racing heartbeat.'],
+                    ['Sleep Disorders', 'Support for difficulty sleeping, disturbed sleep, frequent waking, or an irregular sleep routine.'],
+                    ['Mood & Behavioural Problems', 'Holistic care for mood changes, irritability, emotional outbursts, and behavioural concerns.']
+                ] as $condition
+            ): ?>
+                <div class="feature-card">
+                    <div class="icon">✚</div>
+                    <h3><?= e($condition[0]) ?></h3>
+                    <p><?= e($condition[1]) ?></p>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
