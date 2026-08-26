@@ -604,7 +604,7 @@ th {
 .result-review.collapsed {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    /* -webkit-line-clamp: 3; */
     overflow: hidden
 }
 
@@ -818,7 +818,7 @@ th {
     line-height: 1.55;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
+    /* -webkit-line-clamp: 5; */
     overflow: hidden
 }
 
