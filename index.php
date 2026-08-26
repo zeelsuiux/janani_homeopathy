@@ -12,7 +12,7 @@ require 'header.php'; ?>
             <p><?= e($s['hero_text']) ?></p>
             <div class="actions"><a class="btn" href="appointment.php">Book an Appointment</a><a class="btn btn-outline" href="contact.php">Contact Clinic</a></div>
         </div>
-        <div class="hero-card"><img src="assets/images/hero.jpg" onerror="this.src='assets/images/logo.png'" alt="Homeopathy clinic"></div>
+        <div class="hero-card"><img src="assets/images/home/homeopaty.png" onerror="this.src='assets/images/logo.png'" alt="Homeopathy clinic"></div>
     </div>
 </section>
 <section class="section">

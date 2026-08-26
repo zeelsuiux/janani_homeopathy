@@ -1,2 +1,9 @@
 Options -Indexes
-<FilesMatch "\.(php|phtml|phar)$">Require all denied</FilesMatch>
+
+<FilesMatch "\.(php|phtml|phar)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|bmp)$">
+    Require all granted
+</FilesMatch>

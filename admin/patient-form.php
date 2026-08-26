@@ -1,5 +1,6 @@
 <?php
-require 'header.php';
+require_once '../includes.php';
+admin_required();
 $db = db_load();
 $id = get('id');
 $existing = $id ? find_item($db['patients'], $id) : null;
@@ -98,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $error !== '') {
 }
 
 $page_title = $existing ? 'Edit Patient' : 'New Patient';
+require 'header.php';
 ?>
 <div class="admin-top">
     <h1><?= e($page_title) ?></h1><a class="btn btn-outline" href="patients.php">Back</a>
