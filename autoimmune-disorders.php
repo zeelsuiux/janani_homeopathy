@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for autoimmune disorders">
+            <img src="assets/images/treatments/autoimmune.jpg" onerror="this.src='assets/images/doctor.png'" alt="Autoimmune care">
             <div class="mini-card">
                 <strong>Personalized Immune Care</strong>
                 <span>Respectful, supportive care based on your symptoms, health history, investigations, and individual needs.</span>
@@ -46,9 +46,9 @@ $conditions = [
             <p>Individualized support for thyroid, joint, skin, systemic, and immune-related concerns.</p>
         </div>
         <div class="feature-list">
-            <?php foreach ($conditions as $condition): ?>
+            <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon">✚</div>
+                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
                     <h3><?= e(html_entity_decode($condition[0], ENT_QUOTES, 'UTF-8')) ?></h3>
                     <p><?= e(html_entity_decode($condition[1], ENT_QUOTES, 'UTF-8')) ?></p>
                 </div>

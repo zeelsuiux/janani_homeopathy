@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for skin diseases">
+            <img src="assets/images/treatments/skin.jpg" onerror="this.src='assets/images/doctor.png'" alt="Skin care">
             <div class="mini-card">
                 <strong>Personalized Skin Care</strong>
                 <span>Care that considers your skin pattern, possible triggers, habits, and complete health history.</span>
@@ -46,9 +46,9 @@ $conditions = [
             <p>Individualized care for common skin, scalp, and hair concerns.</p>
         </div>
         <div class="feature-list">
-            <?php foreach ($conditions as $condition): ?>
+            <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon">✚</div>
+                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

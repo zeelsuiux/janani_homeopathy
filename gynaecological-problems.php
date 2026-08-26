@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for gynaecological problems">
+            <img src="assets/images/treatments/gynaecology.jpg" onerror="this.src='assets/images/doctor.png'" alt="Women's health care">
             <div class="mini-card">
                 <strong>Personalized Women&apos;s Care</strong>
                 <span>Private, respectful care based on your symptoms, cycle history, lifestyle, and individual health needs.</span>
@@ -46,9 +46,9 @@ $conditions = [
             <p>Individualized care for menstrual, hormonal, reproductive, and menopausal concerns.</p>
         </div>
         <div class="feature-list">
-            <?php foreach ($conditions as $condition): ?>
+            <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon">✚</div>
+                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

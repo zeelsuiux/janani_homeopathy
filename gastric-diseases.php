@@ -30,7 +30,7 @@ $conditions = [
         </div>
 
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for gastric diseases">
+            <img src="assets/images/treatments/gastric.jpg" onerror="this.src='assets/images/doctor.png'" alt="Digestive health care">
             <div class="mini-card">
                 <strong>Personalized Digestive Care</strong>
                 <span>Care that considers your digestive symptoms, routine, food habits, and complete health history.</span>
@@ -47,9 +47,9 @@ $conditions = [
             <p>Individualized care for common gastric, intestinal, and bowel concerns.</p>
         </div>
         <div class="feature-list">
-            <?php foreach ($conditions as $condition): ?>
+            <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon">✚</div>
+                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

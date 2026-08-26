@@ -23,6 +23,48 @@ body {
     line-height: 1.7
 }
 
+@keyframes page-enter {
+    from { opacity: 0; transform: translateY(12px) }
+    to { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes hero-enter {
+    from { opacity: 0; transform: translateX(-18px) }
+    to { opacity: 1; transform: translateX(0) }
+}
+
+main > section,
+body > section {
+    animation: page-enter .65s ease both
+}
+
+.hero-grid > div:first-child,
+.treatment-hero-grid > div:first-child {
+    animation: hero-enter .7s ease both
+}
+
+.hero-card,
+.treatment-visual {
+    animation: page-enter .75s .12s ease both
+}
+
+.card,
+.feature-card,
+.step-box,
+.result-card,
+.blog-card {
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease
+}
+
+.card:hover,
+.feature-card:hover,
+.step-box:hover,
+.result-card:hover,
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 34px rgba(3, 91, 64, .12)
+}
+
 a {
     text-decoration: none;
     color: inherit
@@ -242,6 +284,22 @@ a {
     gap: 20px
 }
 
+.services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.services-section {
+    padding-bottom: 42px;
+}
+
+.services-grid .card {
+    min-height: 292px;
+}
+
+.services-grid .card:hover {
+    background: #e6f6ef;
+}
+
 .card {
     background: #fff;
     border: 1px solid #e5eee9;
@@ -272,6 +330,42 @@ a {
     font-size: 14px
 }
 
+.service-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    min-height: 48px
+}
+
+.service-icon {
+    color: var(--primary)
+}
+
+.service-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8
+}
+
+.treatment-icon {
+    color: var(--primary)
+}
+
+.treatment-icon-svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8
+}
+
 .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -284,6 +378,18 @@ a {
     border-radius: 18px;
     padding: 28px;
     text-align: center
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    display: block;
+    fill: none;
+    stroke: #e6f6ef;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8
 }
 
 .stat strong {
@@ -599,6 +705,123 @@ th {
     text-align: center
 }
 
+.reviews-hero {
+    padding: 58px 0 36px;
+    background: #f7fbf9;
+    text-align: center
+}
+
+.reviews-summary h1 {
+    margin: 10px 0 8px;
+    color: var(--dark)
+}
+
+.reviews-summary p {
+    margin: 4px 0 18px;
+    color: var(--muted)
+}
+
+.review-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px
+}
+
+.review-score strong {
+    font-size: 30px;
+    color: #f28b21
+}
+
+.review-stars,
+.review-card-stars {
+    color: #f28b21;
+    letter-spacing: 2px
+}
+
+.google-review-btn {
+    display: inline-flex;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #4285f4;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 5px 14px rgba(66, 133, 244, .22)
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px
+}
+
+.trustindex-reviews {
+    min-height: 260px;
+    width: 100%;
+}
+
+.google-review-card {
+    min-height: 175px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #f8f9f7;
+    border: 1px solid #edf0eb;
+    overflow: hidden
+}
+
+.review-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700
+}
+
+.review-card-head h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #185abc
+}
+
+.review-card-head small {
+    color: var(--muted);
+    font-size: 11px
+}
+
+.google-mark {
+    margin-left: auto;
+    color: #4285f4;
+    font-weight: 800;
+    font-size: 18px
+}
+
+.review-card-stars {
+    margin: 14px 0 8px;
+    font-size: 18px;
+    letter-spacing: 1px
+}
+
+.google-review-card p {
+    margin: 0;
+    color: #3e4a45;
+    font-size: 13px;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden
+}
+
 .article {
     max-width: 850px;
     margin: auto
@@ -639,6 +862,18 @@ th {
     display: grid;
     grid-template-columns: 250px 1fr;
     min-height: 100vh
+}
+
+.admin-mobile-toggle {
+    display: none;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: var(--primary);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer
 }
 
 .sidebar {
@@ -860,6 +1095,10 @@ th {
     max-width: 270px
 }
 
+.treatment-visual .mini-card {
+    display: none
+}
+
 .mini-card strong {
     display: block;
     color: var(--dark);
@@ -1033,6 +1272,10 @@ th {
         grid-template-columns: repeat(2, 1fr)
     }
 
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
     .stats,
     .dash-cards {
         grid-template-columns: repeat(2, 1fr)
@@ -1040,6 +1283,10 @@ th {
 
     .blog-grid {
         grid-template-columns: 1fr 1fr
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
     }
 
     .menu {
@@ -1063,21 +1310,30 @@ th {
         background: #fff;
         padding: 18px;
         flex-direction: column;
+        align-items: flex-start;
         box-shadow: 0 8px 20px rgba(0, 0, 0, .08)
+    }
+
+    .nav.open .menu > a {
+        width: 100%;
+        text-align: left
     }
 
     .menu-dropdown {
         width: 100%;
-        text-align: center
+        text-align: left
     }
 
     .menu-dropdown > a {
-        display: inline-flex
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 10px 12px
     }
 
     .submenu {
         position: static;
-        display: block;
+        display: none;
         min-width: 0;
         margin-top: 4px;
         padding: 2px 8px;
@@ -1086,20 +1342,45 @@ th {
         background: #f5faf7
     }
 
+    .menu-dropdown.open .submenu {
+        display: block
+    }
+
     .admin-shell {
         grid-template-columns: 1fr
+    }
+
+    .admin-mobile-toggle {
+        display: block;
+        position: fixed;
+        top: 12px;
+        right: 14px;
+        z-index: 70
     }
 
     .sidebar {
         display: none
     }
 
-    .admin-shell.sidebar-open .sidebar {
+    .admin-menu-open .sidebar {
         display: block
     }
 
     .admin-main {
-        padding: 18px
+        padding: 62px 18px 18px
+    }
+
+    .admin-top {
+        align-items: flex-start;
+        flex-wrap: wrap
+    }
+
+    .table-wrap {
+        overflow-x: auto
+    }
+
+    .form-card {
+        padding: 22px
     }
 }
 
@@ -1118,6 +1399,10 @@ th {
     .form-grid,
     .feature-list,
     .steps-grid {
+        grid-template-columns: 1fr
+    }
+
+    .services-grid {
         grid-template-columns: 1fr
     }
 
@@ -1150,5 +1435,33 @@ th {
 
     .footer-grid {
         grid-template-columns: 1fr
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+
+    .field.full {
+        grid-column: auto
+    }
+
+    .admin-main {
+        padding-left: 14px;
+        padding-right: 14px
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important
     }
 }

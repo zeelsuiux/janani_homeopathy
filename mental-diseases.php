@@ -26,7 +26,7 @@ require 'header.php';
         </div>
 
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for mental diseases">
+            <img src="assets/images/treatments/mental.jpg" onerror="this.src='assets/images/doctor.png'" alt="Mental wellness care">
             <div class="mini-card">
                 <strong>Personalized Care</strong>
                 <span>Natural, gentle homeopathic treatment with a holistic view of mind and body.</span>
@@ -53,10 +53,10 @@ require 'header.php';
                     ['Panic Attacks', 'Care for sudden episodes of intense fear, physical discomfort, breathlessness, or a racing heartbeat.'],
                     ['Sleep Disorders', 'Support for difficulty sleeping, disturbed sleep, frequent waking, or an irregular sleep routine.'],
                     ['Mood & Behavioural Problems', 'Holistic care for mood changes, irritability, emotional outbursts, and behavioural concerns.']
-                ] as $condition
+                ] as $conditionIndex => $condition
             ): ?>
                 <div class="feature-card">
-                    <div class="icon">✚</div>
+                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

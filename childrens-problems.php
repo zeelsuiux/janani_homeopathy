@@ -28,14 +28,14 @@ $conditions = [
             <div class="treatment-badges"><?php foreach ($conditions as $condition): ?><span><?= e($condition[0]) ?></span><?php endforeach; ?></div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for children&apos;s problems">
+            <img src="assets/images/treatments/children.jpg" onerror="this.src='assets/images/doctor.png'" alt="Children&apos;s health care">
             <div class="mini-card"><strong>Personalized Child Care</strong><span>Gentle, respectful support based on your child&apos;s symptoms, routine, development, and health history.</span></div>
         </div>
     </div>
 </section>
 
 <section class="section alt"><div class="container"><div class="section-head"><div class="eyebrow">Child Health Care</div><h2>Problems we support</h2><p>Individualized care for common childhood respiratory, digestive, skin, sleep, and emotional concerns.</p></div><div class="feature-list">
-<?php foreach ($conditions as $condition): ?><div class="feature-card"><div class="icon">✚</div><h3><?= e($condition[0]) ?></h3><p><?= e($condition[1]) ?></p></div><?php endforeach; ?>
+<?php foreach ($conditions as $conditionIndex => $condition): ?><div class="feature-card"><div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div><h3><?= e($condition[0]) ?></h3><p><?= e($condition[1]) ?></p></div><?php endforeach; ?>
 </div></div></section>
 
 <section class="section"><div class="container"><div class="section-head"><div class="eyebrow">Child Health Signs</div><h2>Concerns to discuss with a doctor</h2></div><div class="two-col-grid"><div class="info-panel"><h2>Common concerns include:</h2><ul class="check-list"><li>Frequent colds, cough, allergies, or breathing symptoms</li><li>Recurring throat infections or enlarged tonsils</li><li>Digestive discomfort, constipation, or poor appetite</li><li>Itchy skin, eczema, rashes, or skin allergies</li><li>Bedwetting, sleep disturbance, or nightmares</li><li>Emotional, behavioural, attention, or developmental concerns</li></ul></div><div class="info-panel"><h2>Helpful health factors:</h2><ul class="check-list"><li>Sleep routine, activity, and screen time</li><li>Food habits, hydration, and digestion</li><li>School, family, and emotional environment</li><li>Allergy, infection, and seasonal triggers</li><li>Growth, development, and family history</li></ul></div></div></div></section>

@@ -24,14 +24,14 @@ $conditions = [
             <div class="treatment-badges"><?php foreach ($conditions as $condition): ?><span><?= e($condition[0]) ?></span><?php endforeach; ?></div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for respiratory problems">
+            <img src="assets/images/treatments/respiratory.jpg" onerror="this.src='assets/images/doctor.png'" alt="Respiratory care">
             <div class="mini-card"><strong>Personalized Respiratory Care</strong><span>Support based on your symptoms, triggers, respiratory history, and individual health needs.</span></div>
         </div>
     </div>
 </section>
 
 <section class="section alt"><div class="container"><div class="section-head"><div class="eyebrow">Respiratory Health Care</div><h2>Conditions we support</h2><p>Individualized care for common nose, throat, airway, and chest-related concerns.</p></div><div class="feature-list">
-<?php foreach ($conditions as $condition): ?><div class="feature-card"><div class="icon">✚</div><h3><?= e($condition[0]) ?></h3><p><?= e($condition[1]) ?></p></div><?php endforeach; ?>
+<?php foreach ($conditions as $conditionIndex => $condition): ?><div class="feature-card"><div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div><h3><?= e($condition[0]) ?></h3><p><?= e($condition[1]) ?></p></div><?php endforeach; ?>
 </div></div></section>
 
 <section class="section"><div class="container"><div class="section-head"><div class="eyebrow">Symptoms &amp; Triggers</div><h2>Signs to discuss with a doctor</h2></div><div class="two-col-grid"><div class="info-panel"><h2>Common symptoms include:</h2><ul class="check-list"><li>Cough, wheezing, or chest tightness</li><li>Breathlessness during activity or rest</li><li>Sneezing, blocked nose, or nasal discharge</li><li>Sinus pressure, facial pain, or headache</li><li>Throat pain, irritation, or difficulty swallowing</li><li>Frequent colds, infections, or slow recovery</li></ul></div><div class="info-panel"><h2>Possible contributing factors:</h2><ul class="check-list"><li>Dust, pollen, smoke, pollution, or weather changes</li><li>Allergies, infections, or seasonal triggers</li><li>Family history and individual sensitivity</li><li>Stress, poor sleep, or lifestyle imbalance</li><li>Workplace or environmental exposure</li></ul></div></div></div></section>

@@ -30,7 +30,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/doctor.jpg" onerror="this.src='assets/images/logo.png'" alt="Doctor consultation for bone and joint diseases">
+            <img src="assets/images/treatments/bone-joint.jpg" onerror="this.src='assets/images/doctor.png'" alt="Bone and joint care">
             <div class="mini-card">
                 <strong>Personalized Joint Care</strong>
                 <span>Support based on your pain pattern, mobility, lifestyle, medical history, and individual needs.</span>
@@ -47,9 +47,9 @@ $conditions = [
             <p>Individualized care for common bone, joint, spine, muscle, and nerve-related concerns.</p>
         </div>
         <div class="feature-list">
-            <?php foreach ($conditions as $condition): ?>
+            <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon">✚</div>
+                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

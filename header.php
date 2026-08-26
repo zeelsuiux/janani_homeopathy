@@ -40,6 +40,7 @@
                     </div>
                 </div>
                     <a href="gallery.php">Gallery</a>
+                    <a href="reviews.php">Reviews</a>
                     <a href="result.php">Results</a>
                     <a href="blog.php">Blog</a>
                     <a href="contact.php">Contact</a>

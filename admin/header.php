@@ -15,7 +15,6 @@ $s = settings(); ?>
             --medium: <?= e($s['medium_color']) ?>;
         }
     </style>
-    </style>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
@@ -23,7 +22,8 @@ $s = settings(); ?>
 
 <body class="admin-body">
     <div class="admin-shell">
-        <aside class="sidebar">
+        <button type="button" class="admin-mobile-toggle" aria-expanded="false" aria-controls="adminSidebar">Menu</button>
+        <aside class="sidebar" id="adminSidebar">
             <div class="brand">Doctor Panel</div><a href="index.php">Dashboard</a><a href="patients.php">Patients</a><a href="appointments.php">Appointments</a><a href="calendar.php">Calendar</a><a href="inquiries.php">Inquiries</a><a href="blogs.php">Blogs</a><a href="gallery.php">Gallery</a><a href="result.php">Results</a><a href="settings.php">Settings</a><a href="logout.php">Logout</a>
         </aside>
         <main class="admin-main">
