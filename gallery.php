@@ -14,7 +14,7 @@ foreach (($db['gallery'] ?? []) as $g) {
 ?>
 <section class="page-head">
     <div class="container">
-        <h1>Gallery</h1>
+        <h1 class="font-bold">Gallery</h1>
         <p>Clinic moments, events and patient-care environment.</p>
     </div>
 </section>

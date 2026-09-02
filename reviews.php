@@ -6,8 +6,7 @@ require 'header.php'; ?>
 
 <section class="reviews-hero">
 	<div class="container reviews-summary">
-		<div class="eyebrow">Google Patient Reviews</div>
-		<h1>What Our Patients Say</h1>
+		<h1>Our Patients Say</h1>
 		<p>Live reviews from our Google Business Profile</p>
 		<a class="google-review-btn" href="<?= e($google_review_url) ?>" target="_blank" rel="noopener noreferrer">Review us on Google</a>
 	</div>

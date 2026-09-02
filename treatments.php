@@ -15,7 +15,7 @@ $items = [
     ['title' => 'Kidney & Lifestyle Care', 'link' => 'appointment.php']
 ]; ?><section class="page-head">
     <div class="container">
-        <h1>Our Treatments</h1>
+        <h1 class="font-bold">Our Treatments</h1>
         <p>Personalized care across a range of health concerns.</p>
     </div>
 </section>

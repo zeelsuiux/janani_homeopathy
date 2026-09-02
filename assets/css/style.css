@@ -171,7 +171,8 @@ a {
     color: var(--dark)
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.active {
     color: var(--medium)
 }
 
