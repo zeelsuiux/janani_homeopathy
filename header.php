@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?= e($page_title ?? $s['clinic_name']) ?></title>
     <meta name="description" content="<?= e($s['tagline']) ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary: <?= e($s['primary_color']) ?>;

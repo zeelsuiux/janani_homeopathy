@@ -22,59 +22,223 @@ function service_icon(string $name): string
 ?>
 
 <section class="hero">
-    <div class="container hero-grid">
-        <div>
-            <div class="eyebrow">Personalized Homeopathic Care</div>
-            <h1><?= e($s['hero_title']) ?></h1>
-            <p><?= e($s['hero_text']) ?></p>
-            <div class="actions"><a class="btn" href="appointment.php">Book an Appointment</a><a class="btn btn-outline" href="contact.php">Contact Clinic</a></div>
+    <div class="hero-banner hero-slider" data-slider>
+        <div class="hero-slides">
+            <img class="hero-slide is-active" src="assets/images/home/homeopaty.png" alt="Homeopathy clinic">
+            <img class="hero-slide" src="assets/images/doctor.png" alt="Homeopathy doctor consultation">
+            <img class="hero-slide" src="assets/images/treatments/gastric.jpg" alt="Digestive health care">
+            <img class="hero-slide" src="assets/images/treatments/children.jpg" alt="Children's health care">
         </div>
-        <div class="hero-card"><img src="assets/images/home/homeopaty.png" onerror="this.src='assets/images/logo.png'" alt="Homeopathy clinic"></div>
+        <button class="slider-arrow slider-prev" type="button" data-slider-prev aria-label="Previous image">&#10094;</button>
+        <button class="slider-arrow slider-next" type="button" data-slider-next aria-label="Next image">&#10095;</button>
+        <div class="slider-dots" aria-label="Slider navigation">
+            <button class="slider-dot is-active" type="button" data-slide-to="0" aria-label="Show image 1"></button>
+            <button class="slider-dot" type="button" data-slide-to="1" aria-label="Show image 2"></button>
+            <button class="slider-dot" type="button" data-slide-to="2" aria-label="Show image 3"></button>
+            <button class="slider-dot" type="button" data-slide-to="3" aria-label="Show image 4"></button>
+        </div>
     </div>
 </section>
 <section class="section">
     <div class="container about-grid">
         <div><img class="about-img" src="assets/images/doctor.png" onerror="this.src='assets/images/logo.png'" alt="Doctor"></div>
         <div>
-            <div class="eyebrow">Best Homeopathy Clinic in Surat</div>
-            <h1 class="poppins-bold">Janani Homeopathy</h1>
-            <h3><?= e($s['qualification']) ?></h3>
-            <p>We focus on understanding each patient's individual needs and providing a structured, personalized approach to homeopathic care. The clinic experience is designed around comfort, continuity and easy follow-up.</p><a class="btn" href="about.php">Know More</a>
+            <div class="designation-tag" style="width:fit-content">
+                <div class="px-3 py-1 d-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap w-4 h-4 text-[]" aria-hidden="true">
+                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                    <p class="m-0 ms-2" style="color: var(--primary);">Founder & Chief Physician</p>
+                </div>
+            </div>
+            <h2 class="my-4 font-heading font-bold">
+                Dr. Chirag Patel
+            </h2>
+            <div class="d-flex">
+                <p class="px-2">
+                    <span class="me-1">
+                        <svg aria-hidden="true" width="18" height="18" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="var(--primary)">
+                            <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                        </svg> </span>BHMS
+                </p>
+                <p class="px-2">
+                    <span class="me-1">
+                        <svg aria-hidden="true" width="18" height="18" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="var(--primary)">
+                            <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                        </svg>
+                    </span>
+                    CCPH
+                </p>
+                <p class="px-2">
+                    <span class="me-1">
+                        <svg aria-hidden="true" width="18" height="18" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="var(--primary)">
+                            <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                        </svg>
+                    </span>
+                    SCPH
+                </p>
+                <p class="px-2">
+                    <span class="me-1">
+                        <svg aria-hidden="true" width="18" height="18" class="e-font-icon-svg e-fas-check-circle" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="var(--primary)">
+                            <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
+                        </svg>
+                    </span>
+                    Consulting Homoeopath
+                </p>
+            </div>
+            <div class="font-regular-italic" style="color:var(--muted)">
+                <p>Dr. Chirag Patel is a <b>dedicated and experienced Homeopathic Doctor</b> practicing in <b>Surat</b>. With <b>over a decade of clinical experience</b>, he is committed to providing <b>personalized and holistic homoeopathic care</b>.</p>
+                <p>
+                    He completed his <b>BHMS</b> and has further enhanced his expertise through specialized training in Predictive Homoeopathy. Dr. Patel believes in <b>detailed case evaluation and regular follow-ups</b> to provide individualized care for every patient.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 <section class="section alt services-section">
     <div class="container">
-        <div class="section-head">
-            <div class="eyebrow">Our Services</div>
-            <h2>Services Designed Around You</h2>
-            <p>Personalized homeopathic services for your health, comfort, and long-term wellbeing.</p>
+        <div class="row text-center">
+            <div class="eyebrow">Our Treatment</div>
+            <h2 class="font-heading font-bold">Evidence Based Homeopathic Treatments</h2>
+            <p style="color:var(--muted)">Explore our specialized treatment programs for chronic and complex health conditions in Surat
+            </p>
         </div>
-        <?php $services = [
-            ['title' => 'Skin Care', 'text' => 'Personalized support for skin, scalp, and hair concerns.', 'icon' => 'skin', 'link' => 'skin-diseases.php'],
-            ['title' => 'Respiratory Care', 'text' => 'Care for allergies, asthma, sinus, cough, and breathing concerns.', 'icon' => 'respiratory', 'link' => 'respiratory-problems.php'],
-            ['title' => 'Digestive Health', 'text' => 'Support for acidity, digestion, constipation, and gastric problems.', 'icon' => 'digestive', 'link' => 'gastric-diseases.php'],
-            ['title' => 'Bone & Joint Care', 'text' => 'Support for joint pain, stiffness, back pain, and mobility concerns.', 'icon' => 'joint', 'link' => 'bone-joint-diseases.php'],
-            ['title' => 'Child Care', 'text' => 'Gentle care for common childhood health and wellbeing concerns.', 'icon' => 'child', 'link' => 'childrens-problems.php'],
-            ['title' => "Women's Health", 'text' => 'Private support for menstrual, hormonal, and gynaecological concerns.', 'icon' => 'women', 'link' => 'gynaecological-problems.php'],
-            ['title' => 'Neurological Care', 'text' => 'Personalized support for headache, nerve, balance, and sleep concerns.', 'icon' => 'neurological', 'link' => 'neurological-disorders.php'],
-            ['title' => 'Autoimmune Care', 'text' => 'Supportive care for thyroid, joint, skin, and immune-related concerns.', 'icon' => 'autoimmune', 'link' => 'autoimmune-disorders.php']
-        ]; ?>
-        <div class="cards services-grid"><?php foreach ($services as $service): ?><div class="card">
-                    <div class="icon service-icon"><?= service_icon($service['icon']) ?></div>
-                    <h3><?= e($service['title']) ?></h3>
-                    <p class="service-description"><?= e($service['text']) ?></p>
-                    <a class="btn btn-sm" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
-                </div><?php endforeach; ?></div>
-    </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/mental-diseases.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Mental Diseases</h3>
+                    <p>
+                        Emotional imbalance, persistent stress, mood swings, and anxiety can deeply aff...
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/gastric-diseases.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Gastric Diseases</h3>
+                    <p>
+                        Digestive problems can affect comfort, energy, sleep, and daily routine.
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/skin-diseases.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Skin Diseases</h3>
+                    <p>
+                        Healthy skin reflects the well-being of the whole person.
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/gynaecological-problems.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Gynaecological Problems</h3>
+                    <p>
+                        Women's health concerns can affect the body, emotions, relationships, and daily life.
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/neurological-disorders.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Neurological Disorders</h3>
+                    <p>
+                        Nervous system concerns can affect movement, comfort, sleep, focus, and d...
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/autoimmune-disorders.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Autoimmune Disorders</h3>
+                    <p>
+                        Autoimmune conditions can affect different parts of the body and may change over ...
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/bone-joint-diseases.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Bone & Joint Diseases</h3>
+                    <p>
+                        Bone, joint, and muscle concerns can affect movement, comfort, work, and sleep
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/respiratory-problems.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Respiratory Problems</h3>
+                    <p>
+                        Breathing and respiratory concerns can affect energy, sleep, work, & daily comfort.
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card mb-4">
+                    <div class="holographic-card">
+                        <img src="assets/images/treatments/childrens-problems.png" alt="" class="w-100 " style="border-radius: 16px;">
+                    </div>
+                    <h3>Children's Problems</h3>
+                    <p>
+                        childhood health concerns can affect growth, development, comfort, and daily life.
+                    </p>
+                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                </div>
+            </div>
+
+        </div>
 </section>
 <section class="section">
     <div class="container">
         <div class="stats">
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6"/><path d="M16 5a3 3 0 0 1 0 6M17 14c2.5.5 3.5 2.5 4 6"/></svg><strong>1000+</strong><span>Patient Records</span></div>
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg><strong>10+</strong><span>Years Experience</span></div>
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg><strong>1:1</strong><span>Personalized Care</span></div>
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/><circle cx="17" cy="17" r="3"/></svg><strong>24/7</strong><span>Inquiry Access</span></div>
+            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="9" cy="8" r="3" />
+                    <path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6" />
+                    <path d="M16 5a3 3 0 0 1 0 6M17 14c2.5.5 3.5 2.5 4 6" />
+                </svg><strong>1000+</strong><span>Patient Records</span></div>
+            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 7v5l3 2" />
+                </svg><strong>10+</strong><span>Years Experience</span></div>
+            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 8v8M8 12h8" />
+                </svg><strong>1:1</strong><span>Personalized Care</span></div>
+            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 5h16v14H4z" />
+                    <path d="M8 9h8M8 13h5" />
+                    <circle cx="17" cy="17" r="3" />
+                </svg><strong>24/7</strong><span>Inquiry Access</span></div>
         </div>
     </div>
 </section>
