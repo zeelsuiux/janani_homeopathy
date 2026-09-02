@@ -116,7 +116,7 @@ function service_icon(string $name): string
                     <p>
                         Emotional imbalance, persistent stress, mood swings, and anxiety can deeply aff...
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="mental-diseases.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -128,7 +128,7 @@ function service_icon(string $name): string
                     <p>
                         Digestive problems can affect comfort, energy, sleep, and daily routine.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="gastric-diseases.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -140,7 +140,7 @@ function service_icon(string $name): string
                     <p>
                         Healthy skin reflects the well-being of the whole person.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="skin-diseases.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -152,7 +152,7 @@ function service_icon(string $name): string
                     <p>
                         Women's health concerns can affect the body, emotions, relationships, and daily life.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="gynaecological-problems.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -164,7 +164,7 @@ function service_icon(string $name): string
                     <p>
                         Nervous system concerns can affect movement, comfort, sleep, focus, and d...
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="neurological-disorders.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -176,7 +176,7 @@ function service_icon(string $name): string
                     <p>
                         Autoimmune conditions can affect different parts of the body and may change over ...
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="autoimmune-disorders.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -188,7 +188,7 @@ function service_icon(string $name): string
                     <p>
                         Bone, joint, and muscle concerns can affect movement, comfort, work, and sleep
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="bone-joint-diseases.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -200,7 +200,7 @@ function service_icon(string $name): string
                     <p>
                         Breathing and respiratory concerns can affect energy, sleep, work, & daily comfort.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="respiratory-problems.php">View Service</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -212,10 +212,9 @@ function service_icon(string $name): string
                     <p>
                         childhood health concerns can affect growth, development, comfort, and daily life.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="<?= e($service['link']) ?>">View Service</a>
+                    <a class="btn" style="margin-top:15px" href="childrens-problems.php">View Service</a>
                 </div>
             </div>
-
         </div>
 </section>
 <section class="section">
