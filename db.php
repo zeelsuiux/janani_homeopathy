@@ -3,7 +3,7 @@
 return array (
   'settings' => 
   array (
-    'clinic_name' => 'Satva Homoeopathy & Genetic Research Center',
+    'clinic_name' => 'Janani Homeopathy Clinic',
     'tagline' => 'Natural Care. Personalized Healing.',
     'doctor_name' => 'Dr. Chirag Patel',
     'qualification' => 'BHMS, Consulting Homoeopath',
@@ -48,12 +48,13 @@ return array (
       'date' => '0200-10-29',
       'time' => '23:00',
       'status' => 'Completed',
-      'amount' => 0.0,
+      'amount' => 1000.0,
       'medicine' => 'dfsadfds',
       'instructions' => 'asfsdafsd',
-      'next_date' => '',
+      'next_date' => '2026-09-23',
       'created_at' => '2026-08-23 06:52:02',
       'source_inquiry_id' => 'ee44675a84b5e3a0',
+      'next_time' => '12:22',
     ),
   ),
   'inquiries' => 

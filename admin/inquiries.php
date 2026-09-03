@@ -1,9 +1,10 @@
-<?php require 'header.php'; $db=db_load(); if($_SERVER['REQUEST_METHOD']==='POST'){foreach($db['inquiries'] as &$i){if($i['id']===post('id'))$i['status']=post('status');}unset($i);db_save($db);redirect('inquiries.php');} ?>
-<div class="admin-top"><h1>Inquiries</h1></div>
-<div class="table-wrap"><table><tr><th>Date</th><th>Type</th><th>Name</th><th>Mobile</th><th>Email</th><th>Appointment</th><th>Message</th><th>Status</th><th>Action</th></tr>
+<?php require 'header.php'; $db=db_load(); $statusCounts=['New'=>0,'Contacted'=>0,'Converted'=>0,'Closed'=>0]; foreach($db['inquiries'] as $inquiry){$inquiryStatus=$inquiry['status']??'New'; if(isset($statusCounts[$inquiryStatus]))$statusCounts[$inquiryStatus]++;} if($_SERVER['REQUEST_METHOD']==='POST'){foreach($db['inquiries'] as &$i){if($i['id']===post('id'))$i['status']=post('status');}unset($i);db_save($db);redirect('inquiries.php');} ?>
+<div class="admin-top"><h1>Inquiries</h1><div class="list-toolbar"><div class="list-search"><input type="search" id="inquirySearch" placeholder="Search inquiries..." autocomplete="off" aria-label="Search inquiries"></div></div></div>
+<div class="status-tabs" role="tablist" aria-label="Filter inquiries by status"><button type="button" class="status-tab active" data-status="New">New <span class="status-count"><?=e((string)$statusCounts['New'])?></span></button><button type="button" class="status-tab" data-status="Contacted">Contacted <span class="status-count"><?=e((string)$statusCounts['Contacted'])?></span></button><button type="button" class="status-tab" data-status="Converted">Converted <span class="status-count"><?=e((string)$statusCounts['Converted'])?></span></button><button type="button" class="status-tab" data-status="Closed">Closed <span class="status-count"><?=e((string)$statusCounts['Closed'])?></span></button></div>
+<div class="table-wrap"><table id="inquiriesTable"><tr><th>Date</th><th>Type</th><th>Name</th><th>Mobile</th><th>Email</th><th>Appointment</th><th>Message</th><th>Action</th></tr>
 <?php foreach(array_reverse($db['inquiries']) as $i): ?>
 <?php $type=$i['type']??'Contact Inquiry'; ?>
-<tr>
+<tr class="inquiry-row" data-status="<?=e($i['status']??'')?>" data-search="<?=e(strtolower($type.' '.($i['name']??'').' '.($i['mobile']??'').' '.($i['email']??'').' '.($i['message']??'').' '.($i['status']??'')))?>">
 <td><?=e(date_fmt($i['created_at']))?></td>
 <td><span class="badge"><?=e($type)?></span></td>
 <td><?=e($i['name'])?></td>
@@ -11,6 +12,8 @@
 <td><?=e($i['email']??'')?></td>
 <td><?php if($type==='Appointment Request' && !empty($i['appointment_date'])): ?><?=e(date_fmt($i['appointment_date']))?><br><small><?=e($i['appointment_time']??'')?></small><?php else: ?>-<?php endif; ?></td>
 <td><?=e($i['message']??'')?></td>
-<td><span class="badge"><?=e($i['status'])?></span></td>
 <td><form method="post" class="actions"><input type="hidden" name="id" value="<?=e($i['id'])?>"><select name="status"><option <?=$i['status']==='New'?'selected':''?>>New</option><option <?=$i['status']==='Contacted'?'selected':''?>>Contacted</option><option <?=$i['status']==='Converted'?'selected':''?>>Converted</option><option <?=$i['status']==='Closed'?'selected':''?>>Closed</option></select><button class="btn btn-sm">Update</button><?php if($i['status']!=='Converted'): ?><a class="btn btn-sm btn-outline" href="inquiry-convert.php?id=<?=e($i['id'])?>">Convert to Patient</a><?php endif; ?></form></td>
-</tr><?php endforeach; ?></table></div><?php require 'footer.php'; ?>
+</tr><?php endforeach; ?><tr id="noInquiriesFound" style="display:none"><td colspan="8" style="text-align:center;padding:30px">No inquiries found.</td></tr></table></div>
+<script>
+(function(){const search=document.getElementById('inquirySearch');const rows=Array.from(document.querySelectorAll('.inquiry-row'));const empty=document.getElementById('noInquiriesFound');const tabs=Array.from(document.querySelectorAll('.status-tab'));let selectedStatus='New';function filter(){const query=(search?.value||'').trim().toLowerCase();let visible=0;rows.forEach(function(row){const matchSearch=!query||row.dataset.search.includes(query);const match=matchSearch&&row.dataset.status===selectedStatus;row.style.display=match?'':'none';if(match)visible++;});empty.style.display=visible?'none':'';}search?.addEventListener('input',filter);tabs.forEach(function(tab){tab.addEventListener('click',function(){selectedStatus=tab.dataset.status;tabs.forEach(function(item){item.classList.toggle('active',item===tab);});filter();});});filter();})();
+</script><?php require 'footer.php'; ?>

@@ -18,7 +18,7 @@ $conditions = [
     <div class="container treatment-hero-grid">
         <div>
             <div class="eyebrow">Homeopathic Digestive Care</div>
-            <h1>Gastric Diseases</h1>
+            <!-- <h1>Gastric Diseases</h1> -->
             <p>Digestive problems can affect comfort, energy, sleep, and daily routine. Our personalized approach focuses on your symptoms, food habits, lifestyle, and overall health.</p>
             <div class="actions">
                 <a class="btn" href="appointment.php">Book Consultation</a>
@@ -30,7 +30,7 @@ $conditions = [
         </div>
 
         <div class="treatment-visual">
-            <img src="assets/images/treatments/gastric.jpg" onerror="this.src='assets/images/doctor.png'" alt="Digestive health care">
+            <img src="assets/images/treatments/gastric-diseases.png" alt="Digestive health care">
             <div class="mini-card">
                 <strong>Personalized Digestive Care</strong>
                 <span>Care that considers your digestive symptoms, routine, food habits, and complete health history.</span>

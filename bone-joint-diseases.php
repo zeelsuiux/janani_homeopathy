@@ -30,7 +30,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/treatments/bone-joint.jpg" onerror="this.src='assets/images/doctor.png'" alt="Bone and joint care">
+            <img src="assets/images/treatments/bone-joint-diseases.png" onerror="this.src='assets/images/doctor.png'" alt="Bone and joint care">
             <div class="mini-card">
                 <strong>Personalized Joint Care</strong>
                 <span>Support based on your pain pattern, mobility, lifestyle, medical history, and individual needs.</span>

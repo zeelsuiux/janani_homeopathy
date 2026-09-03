@@ -1,6 +1,20 @@
 <?php require 'includes.php';
 $s = settings();
 $db = db_load();
+$beforeAfterPairs = [
+    [
+        ['image' => 'uploads/20260822180332_d567ca55.jpg'],
+        ['image' => 'uploads/20260822180625_ae6d9b39.png'],
+    ],
+    [
+        ['image' => 'uploads/20260822181206_a45bdef8.jpg'],
+        ['image' => 'uploads/20260822181206_265d09d0.png'],
+    ],
+    [
+        ['image' => 'uploads/20260822181206_a45bdef8.jpg'],
+        ['image' => 'uploads/20260822181206_265d09d0.png'],
+    ]
+];
 $page_title = $s['clinic_name'];
 require 'header.php'; ?>
 
@@ -39,9 +53,12 @@ function service_icon(string $name): string
         </div>
     </div>
 </section>
+
 <section class="section">
     <div class="container about-grid">
-        <div><img class="about-img" src="assets/images/doctor.png" onerror="this.src='assets/images/logo.png'" alt="Doctor"></div>
+        <div class="holographic-card">
+            <img class="about-img" src="assets/images/doctor.png" onerror="this.src='assets/images/logo.png'" alt="Doctor">
+        </div>
         <div>
             <div class="designation-tag" style="width:fit-content">
                 <div class="px-3 py-1 d-flex">
@@ -97,6 +114,7 @@ function service_icon(string $name): string
         </div>
     </div>
 </section>
+
 <section class="section alt services-section">
     <div class="container">
         <div class="row text-center">
@@ -241,6 +259,33 @@ function service_icon(string $name): string
         </div>
     </div>
 </section>
+
+<?php if ($beforeAfterPairs): ?>
+    <section class="section before-after-section" aria-labelledby="before-after-title">
+        <div class="container">
+            <div class="mb-5 text-center">
+                <h1 class="font-bold heading">Hear From Our Happy Patients</h1>
+                <p>Real Stories of Healing and Recovery at Janani Homeopathy Clinic in Surat</p>
+            </div>
+            <div class="before-after-grid">
+                <?php foreach ($beforeAfterPairs as $pairIndex => $pair): if (count($pair) < 2) continue;
+                    $before = $pair[0];
+                    $after = $pair[1]; ?>
+                    <article class="before-after-card col-12 col-md-6 col-lg-4">
+                        <div class="before-after-compare" data-before-after>
+                            <div class="before-after-image"><img src="<?= e($after['image']) ?>" alt="After result"></div>
+                            <div class="before-after-image before-after-before"><img src="<?= e($before['image']) ?>" alt="Before result"></div>
+                            <span class="before-after-label before-label">Before</span><span class="before-after-label after-label">After</span>
+                            <span class="before-after-handle" aria-hidden="true">&#10094; &#10095;</span>
+                            <input class="before-after-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after images">
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
 <section class="section alt">
     <div class="container">
         <div class="section-head">

@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/treatments/gynaecology.jpg" onerror="this.src='assets/images/doctor.png'" alt="Women's health care">
+            <img src="assets/images/treatments/gynaecological-problems.png" onerror="this.src='assets/images/doctor.png'" alt="Women's health care">
             <div class="mini-card">
                 <strong>Personalized Women&apos;s Care</strong>
                 <span>Private, respectful care based on your symptoms, cycle history, lifestyle, and individual health needs.</span>

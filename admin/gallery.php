@@ -444,17 +444,16 @@ uksort($groups, function ($a, $b) {
 
     <h1>Gallery</h1>
 
-    <button
-        type="button"
-        class="btn gallery-add-btn"
-        id="openGalleryModal"
-    >
+    <div class="list-toolbar">
+        <div class="list-search"><input type="search" id="gallerySearch" placeholder="Search galleries..." autocomplete="off" aria-label="Search galleries"></div>
+        <button type="button" class="btn gallery-add-btn" id="openGalleryModal">
 
         <span style="font-size:18px;line-height:1">+</span>
 
         Add New Gallery
 
-    </button>
+        </button>
+    </div>
 
 </div>
 
@@ -473,7 +472,7 @@ uksort($groups, function ($a, $b) {
 
     <?php foreach ($groups as $name => $images): ?>
 
-        <div class="form-card gallery-card">
+        <div class="form-card gallery-card" data-search="<?= e(strtolower($name)) ?>">
 
             <div class="gallery-card-head">
 
@@ -492,6 +491,10 @@ uksort($groups, function ($a, $b) {
                     </span>
 
                 </div>
+
+                <button type="button" class="btn btn-sm gallery-add-image" data-gallery-name="<?= e($name) ?>">
+                    + Add Image
+                </button>
 
             </div>
 
@@ -665,6 +668,14 @@ uksort($groups, function ($a, $b) {
 
     const nameInput = document.getElementById('galleryName');
 
+    const modalTitle = document.getElementById('galleryModalTitle');
+
+    const addImageButtons = document.querySelectorAll('.gallery-add-image');
+
+    const gallerySearch = document.getElementById('gallerySearch');
+
+    const galleryCards = Array.from(document.querySelectorAll('.gallery-card'));
+
 
     function openModal() {
 
@@ -690,6 +701,30 @@ uksort($groups, function ($a, $b) {
     }
 
 
+    function openExistingGalleryModal(name) {
+
+        if (!modal || !nameInput) return;
+
+        nameInput.value = name;
+
+        if (modalTitle) {
+            modalTitle.textContent = 'Add Image to ' + name;
+        }
+
+        openModal();
+
+    }
+
+    if (gallerySearch) {
+        gallerySearch.addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+            galleryCards.forEach(function (card) {
+                card.style.display = !query || card.dataset.search.includes(query) ? '' : 'none';
+            });
+        });
+    }
+
+
     function closeModal() {
 
         if (!modal) return;
@@ -709,9 +744,28 @@ uksort($groups, function ($a, $b) {
     if (openBtn) {
         openBtn.addEventListener(
             'click',
-            openModal
+            function () {
+
+                if (nameInput) nameInput.value = '';
+
+                if (modalTitle) modalTitle.textContent = 'Add New Gallery';
+
+                openModal();
+
+            }
         );
     }
+
+
+    addImageButtons.forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+            openExistingGalleryModal(button.dataset.galleryName || '');
+
+        });
+
+    });
 
 
     if (closeBtn) {

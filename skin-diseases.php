@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/treatments/skin.jpg" onerror="this.src='assets/images/doctor.png'" alt="Skin care">
+            <img src="assets/images/treatments/skin-diseases.png" alt="Skin care">
             <div class="mini-card">
                 <strong>Personalized Skin Care</strong>
                 <span>Care that considers your skin pattern, possible triggers, habits, and complete health history.</span>

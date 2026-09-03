@@ -7,7 +7,7 @@ $conditions = [
     ['Rheumatoid Arthritis', 'Personalized care for joint pain, stiffness, swelling, and recurring inflammatory discomfort.'],
     ['Psoriasis', 'Guidance for recurring scaly, itchy, or inflamed skin associated with immune-related concerns.'],
     ['Vitiligo', 'Support for changes in skin pigmentation and the appearance of white patches.'],
-    ['SLE', 'Holistic support while considering the individual symptoms and systemic nature of lupus.'],
+    ['SLE', 'Holistic support while considering the individual symptoms and systemic naturse of lupus.'],
     ['Scleroderma', 'Individualized supportive care for skin changes, stiffness, and related health concerns.'],
     ['Sjögren&apos;s Syndrome', 'Care focused on dryness, fatigue, discomfort, and the person&apos;s overall health pattern.'],
     ['Other Autoimmune Conditions', 'Personalized evaluation and supportive care for other immune-related complaints.']
@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/treatments/autoimmune.jpg" onerror="this.src='assets/images/doctor.png'" alt="Autoimmune care">
+            <img src="assets/images/treatments/autoimmune-disorders.png" onerror="this.src='assets/images/doctor.png'" alt="Autoimmune care">
             <div class="mini-card">
                 <strong>Personalized Immune Care</strong>
                 <span>Respectful, supportive care based on your symptoms, health history, investigations, and individual needs.</span>

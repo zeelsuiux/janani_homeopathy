@@ -26,7 +26,7 @@ require 'header.php';
         </div>
 
         <div class="treatment-visual">
-            <img src="assets/images/treatments/mental.jpg" onerror="this.src='assets/images/doctor.png'" alt="Mental wellness care">
+            <img src="assets/images/treatments/mental-diseases.png" alt="Mental wellness care">
             <div class="mini-card">
                 <strong>Personalized Care</strong>
                 <span>Natural, gentle homeopathic treatment with a holistic view of mind and body.</span>

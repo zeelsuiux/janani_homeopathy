@@ -29,7 +29,7 @@ $conditions = [
             </div>
         </div>
         <div class="treatment-visual">
-            <img src="assets/images/treatments/neurological.jpg" onerror="this.src='assets/images/doctor.png'" alt="Neurological care">
+            <img src="assets/images/treatments/neurological-disorders.png"alt="Neurological care">
             <div class="mini-card">
                 <strong>Personalized Neurological Care</strong>
                 <span>Care based on your symptoms, neurological history, daily routine, and individual health needs.</span>
