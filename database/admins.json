@@ -1,0 +1,25 @@
+[
+    {
+        "id": "53c3f5da24a31e13",
+        "username": "zeels",
+        "password": "$2y$10$GXxFWdpThn/LBtx5vPcbretbMLdoaCpaEnI9kcivh.iUm18U71IKe",
+        "role": "subadmin",
+        "created_at": "2026-09-03 14:04:21"
+    },
+    {
+        "id": "b16accd2a1cf838c",
+        "username": "asdfsdafa",
+        "password": "$2y$10$SOqAhHC8P.nzbAI.LU/u.unKcra8bapdDpT2wP.dZ1OvXE63P961.",
+        "role": "subadmin",
+        "name": "asdffdsffff",
+        "gender": "Male",
+        "photo": "uploads/20260903141904_8d898288.png",
+        "dob": "2004-10-26",
+        "designation": "asdfsdf",
+        "mobile": "97896933663",
+        "degree": "sdfadsfsdf",
+        "email": "",
+        "address": "",
+        "created_at": "2026-09-03 14:19:04"
+    }
+]

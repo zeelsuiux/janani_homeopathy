@@ -1,6 +1,7 @@
 <?php
 require_once '../includes.php';
 admin_required();
+admin_require_permission('edit');
 $db = db_load();
 $id = get('id');
 $existing = $id ? find_item($db['patients'], $id) : null;

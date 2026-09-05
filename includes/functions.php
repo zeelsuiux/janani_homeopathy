@@ -4,24 +4,68 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 define('BASE_PATH', dirname(__DIR__));
-define('DB_FILE', BASE_PATH . '/db.php');
+define('DB_DIR', BASE_PATH . '/database/');
 define('UPLOAD_DIR', BASE_PATH . '/uploads/');
 define('UPLOAD_URL', 'uploads/');
 
 function db(): array {
     static $data = null;
     if ($data === null) {
-        $data = require DB_FILE;
+        $data = [];
+        foreach (db_collections() as $collection => $file) {
+            $json = file_get_contents(DB_DIR . $file);
+            $value = json_decode($json ?: '', true);
+            $data[$collection] = is_array($value) ? $value : [];
+        }
     }
     return $data;
 }
+function db_collections(): array {
+    return ['settings' => 'settings.json', 'admins' => 'admins.json', 'activities' => 'activities.json', 'patients' => 'patients.json', 'appointments' => 'appointments.json', 'inquiries' => 'inquiries.json', 'blogs' => 'blogs.json', 'gallery' => 'gallery.json', 'results' => 'results.json'];
+}
 
 function save_db(array $data): bool {
-    $export = "<?php\nreturn " . var_export($data, true) . ";\n";
-    $tmp = DB_FILE . '.tmp';
-    $ok = file_put_contents($tmp, $export, LOCK_EX);
-    if ($ok === false) return false;
-    return rename($tmp, DB_FILE);
+    backup_deleted_records(db(), $data);
+    if (admin_logged_in()) {
+        if (!isset($data['activities']) || !is_array($data['activities'])) $data['activities'] = [];
+        $data['activities'][] = ['id' => bin2hex(random_bytes(8)), 'admin_id' => (string)($_SESSION['admin_id'] ?? ''), 'admin_username' => (string)($_SESSION['admin_username'] ?? 'admin'), 'action' => 'Updated application data', 'created_at' => date('Y-m-d H:i:s')];
+        if (count($data['activities']) > 500) $data['activities'] = array_slice($data['activities'], -500);
+    }
+    foreach (db_collections() as $collection => $file) {
+        $export = json_encode($data[$collection] ?? [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL;
+        $tmp = DB_DIR . $file . '.tmp';
+        $ok = file_put_contents($tmp, $export, LOCK_EX);
+        if ($ok === false || !rename($tmp, DB_DIR . $file)) return false;
+    }
+    return true;
+}
+
+function backup_deleted_records(array $before, array $after): void {
+    $deletedDir = DB_DIR . 'deleted/';
+    foreach ($before as $collection => $records) {
+        if (!is_array($records) || !is_list_array($records)) continue;
+        $deletedPath = $deletedDir . $collection . '.json';
+        if (!is_file($deletedPath)) continue;
+        $deleted = json_decode(file_get_contents($deletedPath) ?: '', true);
+        if (!is_array($deleted)) $deleted = [];
+        $remaining = $after[$collection] ?? [];
+        if (!is_array($remaining)) $remaining = [];
+        $remainingIds = array_map(fn($record) => (string)($record['id'] ?? ''), $remaining);
+        foreach ($records as $record) {
+            if (!is_array($record) || !isset($record['id']) || in_array((string)$record['id'], $remainingIds, true)) continue;
+            $backupIds = array_map(fn($saved) => (string)($saved['id'] ?? ''), $deleted);
+            if (!in_array((string)$record['id'], $backupIds, true)) {
+                $record['deleted_at'] = date('Y-m-d H:i:s');
+                $deleted[] = $record;
+            }
+        }
+        file_put_contents($deletedPath, json_encode($deleted, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL, LOCK_EX);
+    }
+}
+
+function is_list_array(array $value): bool {
+    if ($value === []) return true;
+    return array_keys($value) === range(0, count($value) - 1);
 }
 
 function setting(string $key, string $fallback = ''): string {

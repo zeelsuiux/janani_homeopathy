@@ -3,10 +3,12 @@
 A PHP website inspired by the information architecture of the supplied reference clinic site, customized for the supplied green brand palette and logo.
 
 ## Important
-- **No MySQL / SQL is used.** All records are stored in `db.php` as a PHP array.
-- Uploaded blog/gallery images are stored under `uploads/` and their paths are stored in `db.php`.
-- PHP needs permission to write `db.php` and the `uploads/` folder.
-- Change the admin username/password from **Admin → Settings** or directly in `db.php` before production.
+- **No MySQL / SQL is used.** Records are stored as separate JSON files inside the `database/` folder.
+- Deleted records are automatically archived in separate files under `database/deleted/` before they are removed from their collection file; each backup record includes its `deleted_at` date and time.
+- Uploaded blog/gallery images are stored under `uploads/` and their paths are stored in the relevant `database/*.json` file.
+- PHP needs permission to write the `database/` folder and the `uploads/` folder.
+- Change the admin username/password from **Admin → Settings** before production.
+- The master admin can create sub-admin users and review timestamped activity from **Admin Users** and **Activity Log**.
 
 ## Main website
 - Home

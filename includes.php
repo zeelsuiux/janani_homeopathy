@@ -2,17 +2,65 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 function db_load(): array
 {
-    $data = include __DIR__ . '/db.php';
-    return is_array($data) ? $data : [];
+    $data = [];
+    foreach (db_collections() as $collection => $file) {
+        $json = file_get_contents(__DIR__ . '/database/' . $file);
+        $value = json_decode($json ?: '', true);
+        $data[$collection] = is_array($value) ? $value : (in_array($collection, ['settings'], true) ? [] : []);
+    }
+    return array_merge(default_db(), $data);
 }
 function db_save(array $data): void
 {
-    $php = "<?php\n// FILE-BASED DATABASE: No MySQL / SQL is used.\nreturn " . var_export($data, true) . ";\n";
-    file_put_contents(__DIR__ . '/db.php', $php, LOCK_EX);
+    $oldData = db_load();
+    backup_deleted_records($oldData, $data);
+    record_admin_activity($oldData, $data);
+    foreach (db_collections() as $collection => $file) {
+        file_put_contents(__DIR__ . '/database/' . $file, json_encode($data[$collection] ?? [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL, LOCK_EX);
+    }
+}
+function db_collections(): array
+{
+    return ['settings' => 'settings.json', 'admins' => 'admins.json', 'activities' => 'activities.json', 'patients' => 'patients.json', 'appointments' => 'appointments.json', 'inquiries' => 'inquiries.json', 'blogs' => 'blogs.json', 'gallery' => 'gallery.json', 'results' => 'results.json'];
+}
+function record_admin_activity(array $before, array &$data): void
+{
+    if (empty($_SESSION['admin_logged_in'])) return;
+    if (!isset($data['activities']) || !is_array($data['activities'])) $data['activities'] = [];
+    $data['activities'][] = ['id' => make_id(), 'admin_id' => (string)($_SESSION['admin_id'] ?? ''), 'admin_username' => (string)($_SESSION['admin_username'] ?? 'admin'), 'action' => 'Updated application data', 'created_at' => date('Y-m-d H:i:s')];
+    if (count($data['activities']) > 500) $data['activities'] = array_slice($data['activities'], -500);
+}
+function backup_deleted_records(array $before, array $after): void
+{
+    $deletedDir = __DIR__ . '/database/deleted/';
+    foreach ($before as $collection => $records) {
+        if (!is_array($records) || !is_list_array($records)) continue;
+        $deletedPath = $deletedDir . $collection . '.json';
+        if (!is_file($deletedPath)) continue;
+        $deleted = json_decode(file_get_contents($deletedPath) ?: '', true);
+        if (!is_array($deleted)) $deleted = [];
+        $remaining = $after[$collection] ?? [];
+        if (!is_array($remaining)) $remaining = [];
+        $remainingIds = array_map(fn($record) => (string)($record['id'] ?? ''), $remaining);
+        foreach ($records as $record) {
+            if (!is_array($record) || !isset($record['id']) || in_array((string)$record['id'], $remainingIds, true)) continue;
+            $backupIds = array_map(fn($saved) => (string)($saved['id'] ?? ''), $deleted);
+            if (!in_array((string)$record['id'], $backupIds, true)) {
+                $record['deleted_at'] = date('Y-m-d H:i:s');
+                $deleted[] = $record;
+            }
+        }
+        file_put_contents($deletedPath, json_encode($deleted, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL, LOCK_EX);
+    }
+}
+function is_list_array(array $value): bool
+{
+    if ($value === []) return true;
+    return array_keys($value) === range(0, count($value) - 1);
 }
 function default_db(): array
 {
-    return ['settings' => [], 'patients' => [], 'appointments' => [], 'inquiries' => [], 'blogs' => [], 'gallery' => [], 'results' => []];
+    return ['settings' => [], 'admins' => [], 'activities' => [], 'patients' => [], 'appointments' => [], 'inquiries' => [], 'blogs' => [], 'gallery' => [], 'results' => []];
 }
 function next_number(array $items, string $prefix): string
 {
@@ -64,6 +112,65 @@ function settings(): array
 function admin_required(): void
 {
     if (empty($_SESSION['admin_logged_in'])) redirect('login.php');
+}
+function current_admin_is_master(): bool
+{
+    if (($_SESSION['admin_role'] ?? '') === 'master') return true;
+    $settings = db_load()['settings'] ?? [];
+    return ($_SESSION['admin_username'] ?? '') !== '' && ($_SESSION['admin_username'] ?? '') === ($settings['admin_user'] ?? '');
+}
+function admin_permission_defaults(): array
+{
+    return ['view' => true, 'edit' => true, 'delete' => true];
+}
+function admin_permissions_for(?array $admin): array
+{
+    $permissions = is_array($admin['permissions'] ?? null) ? $admin['permissions'] : [];
+    $resolved = admin_permission_defaults();
+    foreach ($resolved as $key => $value) {
+        if (array_key_exists($key, $permissions)) {
+            $resolved[$key] = (bool)$permissions[$key];
+        }
+    }
+    return $resolved;
+}
+function current_admin_record(): ?array
+{
+    if (empty($_SESSION['admin_logged_in'])) return null;
+    $db = db_load();
+    $adminId = (string)($_SESSION['admin_id'] ?? '');
+    $username = (string)($_SESSION['admin_username'] ?? '');
+    foreach (($db['admins'] ?? []) as $admin) {
+        if ((string)($admin['id'] ?? '') === $adminId || (string)($admin['username'] ?? '') === $username) {
+            return $admin;
+        }
+    }
+    if (($username !== '') && strtolower((string)($_SESSION['admin_role'] ?? '')) === 'master') {
+        return ['id' => $adminId, 'username' => $username, 'role' => 'master', 'permissions' => admin_permission_defaults()];
+    }
+    return null;
+}
+function current_admin_can(string $action): bool
+{
+    if (current_admin_is_master()) return true;
+    $admin = current_admin_record();
+    if (!$admin) return false;
+    $permissions = admin_permissions_for($admin);
+    $action = strtolower(trim($action));
+    return !empty($permissions[$action]);
+}
+function admin_require_permission(string $action): void
+{
+    admin_required();
+    if (!current_admin_can($action)) {
+        http_response_code(403);
+        exit('Access denied.');
+    }
+}
+function master_admin_required(): void
+{
+    admin_required();
+    if (!current_admin_is_master()) { http_response_code(403); exit('Access denied.'); }
 }
 function find_item(array $items, string $id): ?array
 {

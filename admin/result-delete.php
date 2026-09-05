@@ -1,6 +1,7 @@
 <?php
 require_once '../includes.php';
 admin_required();
+admin_require_permission('delete');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirect('result.php');

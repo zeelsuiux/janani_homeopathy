@@ -2,14 +2,10 @@
 require 'header.php';
 
 $db = db_load();
+$canEdit = current_admin_can('edit');
+$canDelete = current_admin_can('delete');
 
-/*
-|--------------------------------------------------------------------------
-| ADD / UPDATE GALLERY
-|--------------------------------------------------------------------------
-*/
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($canEdit && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $galleryName = trim(post('name'));
     $files       = $_FILES['images'] ?? null;
@@ -492,9 +488,9 @@ uksort($groups, function ($a, $b) {
 
                 </div>
 
-                <button type="button" class="btn btn-sm gallery-add-image" data-gallery-name="<?= e($name) ?>">
+                <?php if ($canEdit): ?><button type="button" class="btn btn-sm gallery-add-image" data-gallery-name="<?= e($name) ?>">
                     + Add Image
-                </button>
+                </button><?php endif; ?>
 
             </div>
 
@@ -511,7 +507,7 @@ uksort($groups, function ($a, $b) {
                             loading="lazy"
                         >
 
-                        <div class="gallery-delete">
+                        <?php if ($canDelete): ?><div class="gallery-delete">
 
                             <a
                                 class="btn btn-sm btn-danger"
@@ -521,7 +517,7 @@ uksort($groups, function ($a, $b) {
                                 Delete
                             </a>
 
-                        </div>
+                        </div><?php endif; ?>
 
                     </div>
 

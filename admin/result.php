@@ -2,6 +2,8 @@
 require 'header.php';
 
 $db = db_load();
+$canEdit = current_admin_can('edit');
+$canDelete = current_admin_can('delete');
 $results = isset($db['results']) && is_array($db['results']) ? $db['results'] : [];
 
 $items = array_values($results);
@@ -13,7 +15,7 @@ $page_title = 'Results | Admin';
     <h1>Results</h1>
     <div class="list-toolbar">
         <div class="list-search"><input type="search" id="resultSearch" placeholder="Search results..." autocomplete="off" aria-label="Search results"></div>
-        <button type="button" class="btn" id="openResultModal">+ Add Result</button>
+        <?php if ($canEdit): ?><button type="button" class="btn" id="openResultModal">+ Add Result</button><?php endif; ?>
     </div>
 </div>
 
@@ -30,10 +32,10 @@ $page_title = 'Results | Admin';
                 <p><?= nl2br(e($item['review'])) ?></p>
                 <div class="meta-row result-card-footer">
                     <small><?= e($item['created_at'] ?? '') ?></small>
-                    <form method="post" action="result-delete.php" onsubmit="return confirm('Delete this result?');">
+                    <?php if ($canDelete): ?><form method="post" action="result-delete.php" onsubmit="return confirm('Delete this result?');">
                         <input type="hidden" name="id" value="<?= (int)($item['id'] ?? 0) ?>">
                         <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    </form><?php endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -41,7 +43,7 @@ $page_title = 'Results | Admin';
     </div>
 <?php endif; ?>
 
-<div class="blog-modal" id="resultModal" aria-hidden="true">
+<?php if ($canEdit): ?><div class="blog-modal" id="resultModal" aria-hidden="true">
     <div class="blog-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="resultModalTitle">
         <div class="blog-modal-header">
             <h2 id="resultModalTitle">Add Result</h2>
@@ -54,7 +56,7 @@ $page_title = 'Results | Admin';
             <div class="actions"><button type="submit" class="btn">Save Result</button></div>
         </form>
     </div>
-</div>
+</div><?php endif; ?>
 
 <script>
 (function(){

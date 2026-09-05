@@ -1,1 +1,1 @@
-<?php require 'header.php'; $db=db_load(); $id=get('id'); $db['blogs']=array_values(array_filter($db['blogs'],fn($b)=>$b['id']!==$id)); db_save($db); redirect('blogs.php');
+<?php require 'header.php'; admin_require_permission('delete'); $db=db_load(); $id=get('id'); $db['blogs']=array_values(array_filter($db['blogs'],fn($b)=>$b['id']!==$id)); db_save($db); redirect('blogs.php');
