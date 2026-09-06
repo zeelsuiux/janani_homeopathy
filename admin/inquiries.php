@@ -1,20 +1,56 @@
-<?php require 'header.php'; $db=db_load(); $statusCounts=['New'=>0,'Contacted'=>0,'Converted'=>0,'Closed'=>0]; foreach($db['inquiries'] as $inquiry){$inquiryStatus=$inquiry['status']??'New'; if(isset($statusCounts[$inquiryStatus]))$statusCounts[$inquiryStatus]++;} $errorMessage = trim((string)($_GET['error'] ?? '')); if($_SERVER['REQUEST_METHOD']==='POST'){foreach($db['inquiries'] as &$i){if($i['id']===post('id'))$i['status']=post('status');}unset($i);db_save($db);redirect('inquiries.php');} ?>
+<?php
+require 'header.php';
+$db = db_load();
+$statuses = ['New', 'Contacted', 'Converted', 'Closed'];
+$statusCounts = array_fill_keys($statuses, 0);
+$kanban = array_fill_keys($statuses, []);
+$errorMessage = trim((string)($_GET['error'] ?? ''));
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	foreach ($db['inquiries'] as &$inquiry) {
+		if ($inquiry['id'] === post('id')) $inquiry['status'] = post('status');
+	}
+	unset($inquiry);
+	db_save($db);
+	redirect('inquiries.php');
+}
+
+foreach (array_reverse($db['inquiries']) as $inquiry) {
+	$status = $inquiry['status'] ?? 'New';
+	if (!isset($kanban[$status])) $status = 'New';
+	$kanban[$status][] = $inquiry;
+	$statusCounts[$status]++;
+}
+?>
 <div class="admin-top"><h1>Inquiries</h1><div class="list-toolbar"><div class="list-search"><input type="search" id="inquirySearch" placeholder="Search inquiries..." autocomplete="off" aria-label="Search inquiries"></div></div></div>
 <?php if ($errorMessage !== ''): ?><div class="notice danger"><?= e($errorMessage) ?></div><?php endif; ?>
-<div class="status-tabs" role="tablist" aria-label="Filter inquiries by status"><button type="button" class="status-tab active" data-status="New">New <span class="status-count"><?=e((string)$statusCounts['New'])?></span></button><button type="button" class="status-tab" data-status="Contacted">Contacted <span class="status-count"><?=e((string)$statusCounts['Contacted'])?></span></button><button type="button" class="status-tab" data-status="Converted">Converted <span class="status-count"><?=e((string)$statusCounts['Converted'])?></span></button><button type="button" class="status-tab" data-status="Closed">Closed <span class="status-count"><?=e((string)$statusCounts['Closed'])?></span></button></div>
-<div class="table-wrap"><table id="inquiriesTable"><tr><th>Date</th><th>Type</th><th>Name</th><th>Mobile</th><th>Email</th><th>Appointment</th><th>Message</th><th>Action</th></tr>
-<?php foreach(array_reverse($db['inquiries']) as $i): ?>
-<?php $type=$i['type']??'Contact Inquiry'; ?>
-<tr class="inquiry-row" data-status="<?=e($i['status']??'')?>" data-search="<?=e(strtolower($type.' '.($i['name']??'').' '.($i['mobile']??'').' '.($i['email']??'').' '.($i['message']??'').' '.($i['status']??'')))?>">
-<td><?=e(date_fmt($i['created_at']))?></td>
-<td><span class="badge"><?=e($type)?></span></td>
-<td><?=e($i['name'])?></td>
-<td><?=e($i['mobile'])?></td>
-<td><?=e($i['email']??'')?></td>
-<td><?php if($type==='Appointment Request' && !empty($i['appointment_date'])): ?><?=e(date_fmt($i['appointment_date']))?><br><small><?=e($i['appointment_time']??'')?></small><?php else: ?>-<?php endif; ?></td>
-<td><?=e($i['message']??'')?></td>
-<td><form method="post" class="actions"><input type="hidden" name="id" value="<?=e($i['id'])?>"><select name="status"><option <?=$i['status']==='New'?'selected':''?>>New</option><option <?=$i['status']==='Contacted'?'selected':''?>>Contacted</option><option <?=$i['status']==='Converted'?'selected':''?>>Converted</option><option <?=$i['status']==='Closed'?'selected':''?>>Closed</option></select><button class="btn btn-sm">Update</button><?php if($i['status']!=='Converted'): ?><a class="btn btn-sm btn-outline" href="inquiry-convert.php?id=<?=e($i['id'])?>">Convert to Patient</a><?php endif; ?></form></td>
-</tr><?php endforeach; ?><tr id="noInquiriesFound" style="display:none"><td colspan="8" style="text-align:center;padding:30px">No inquiries found.</td></tr></table></div>
+<div class="inquiry-kanban" id="inquiryKanban">
+<?php foreach ($statuses as $status): ?>
+	<section class="inquiry-column" data-status-column="<?= e($status) ?>">
+		<header class="inquiry-column-head"><h2><?= e($status) ?></h2><span class="status-count"><?= e((string)$statusCounts[$status]) ?></span></header>
+		<div class="inquiry-column-body">
+		<?php foreach ($kanban[$status] as $i): $type = $i['type'] ?? 'Contact Inquiry'; ?>
+			<article class="inquiry-card" data-status="<?= e($status) ?>" data-search="<?= e(strtolower($type . ' ' . ($i['name'] ?? '') . ' ' . ($i['mobile'] ?? '') . ' ' . ($i['email'] ?? '') . ' ' . ($i['message'] ?? '') . ' ' . $status)) ?>">
+				<div class="inquiry-card-top"><span class="badge"><?= e($type) ?></span><small><?= e(date_fmt($i['created_at'] ?? '')) ?></small></div>
+				<h3><?= e($i['name'] ?? '-') ?></h3>
+				<p class="inquiry-card-contact"><?= e($i['mobile'] ?? '-') ?><br><?= e($i['email'] ?? '-') ?></p>
+				<?php if ($type === 'Appointment Request' && !empty($i['appointment_date'])): ?><p class="inquiry-card-appointment"><strong>Appointment:</strong> <?= e(date_fmt($i['appointment_date'])) ?> · <?= e($i['appointment_time'] ?? '') ?></p><?php endif; ?>
+				<?php if (!empty($i['message'])): ?><p class="inquiry-card-message"><?= e($i['message']) ?></p><?php endif; ?>
+				<form method="post" class="inquiry-card-actions">
+					<input type="hidden" name="id" value="<?= e($i['id']) ?>">
+					<select name="status" aria-label="Change inquiry status">
+						<?php foreach ($statuses as $option): ?><option value="<?= e($option) ?>" <?= $status === $option ? 'selected' : '' ?>><?= e($option) ?></option><?php endforeach; ?>
+					</select>
+					<button class="btn btn-sm" type="submit">Update</button>
+					<?php if ($status !== 'Converted'): ?><a class="btn btn-sm btn-outline" href="inquiry-convert.php?id=<?= e($i['id']) ?>">Convert</a><?php endif; ?>
+				</form>
+			</article>
+		<?php endforeach; ?>
+		<p class="inquiry-column-empty">No inquiries</p>
+		</div>
+	</section>
+<?php endforeach; ?>
+</div>
 <script>
-(function(){const search=document.getElementById('inquirySearch');const rows=Array.from(document.querySelectorAll('.inquiry-row'));const empty=document.getElementById('noInquiriesFound');const tabs=Array.from(document.querySelectorAll('.status-tab'));let selectedStatus='New';function filter(){const query=(search?.value||'').trim().toLowerCase();let visible=0;rows.forEach(function(row){const matchSearch=!query||row.dataset.search.includes(query);const match=matchSearch&&row.dataset.status===selectedStatus;row.style.display=match?'':'none';if(match)visible++;});empty.style.display=visible?'none':'';}search?.addEventListener('input',filter);tabs.forEach(function(tab){tab.addEventListener('click',function(){selectedStatus=tab.dataset.status;tabs.forEach(function(item){item.classList.toggle('active',item===tab);});filter();});});filter();})();
+(function(){const search=document.getElementById('inquirySearch');const cards=Array.from(document.querySelectorAll('.inquiry-card'));const columns=Array.from(document.querySelectorAll('.inquiry-column'));function filter(){const query=(search?.value||'').trim().toLowerCase();columns.forEach(function(column){let visible=0;column.querySelectorAll('.inquiry-card').forEach(function(card){const match=!query||card.dataset.search.includes(query);card.style.display=match?'':'none';if(match)visible++;});const empty=column.querySelector('.inquiry-column-empty');if(empty)empty.style.display=visible?'none':'';});}search?.addEventListener('input',filter);filter();})();
 </script><?php require 'footer.php'; ?>

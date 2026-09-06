@@ -36,14 +36,54 @@ function service_icon(string $name): string
 ?>
 
 <section class="hero">
-    <div class="hero-banner hero-slider" data-slider>
-        <div class="hero-slides">
-            <img class="hero-slide is-active" src="assets/images/home/homeopaty.png" alt="Homeopathy clinic">
-            <img class="hero-slide" src="assets/images/doctor.png" alt="Homeopathy doctor consultation">
-            <img class="hero-slide" src="assets/images/treatments/gastric.jpg" alt="Digestive health care">
-            <img class="hero-slide" src="assets/images/treatments/children.jpg" alt="Children's health care">
+    <div class="container hero-grid" data-slider>
+        <div class="hero-content">
+            <div class="hero-copy is-active" data-slide-content>
+                <div class="eyebrow"><?= e($s['clinic_name']) ?></div>
+                <h1><?= e($s['hero_title']) ?></h1>
+                <p><?= e($s['hero_text']) ?></p>
+                <div class="hero-actions">
+                    <a class="btn" href="appointment.php">Book Appointment</a>
+                    <a class="btn btn-outline" href="treatments.php">Explore Treatments</a>
+                </div>
+            </div>
+            <div class="hero-copy" data-slide-content>
+                <div class="eyebrow">Personalized Care</div>
+                <h1>Gentle Support for Better Health</h1>
+                <p>Understand your health concerns with detailed consultation and a care plan designed around your needs.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="appointment.php">Book Appointment</a>
+                    <a class="btn btn-outline" href="about.php">Meet Our Doctor</a>
+                </div>
+            </div>
+            <div class="hero-copy" data-slide-content>
+                <div class="eyebrow">Holistic Treatment</div>
+                <h1>Care for Chronic Health Concerns</h1>
+                <p>Explore supportive homeopathic treatment for digestive health, lifestyle concerns and long-term wellness.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="appointment.php">Book Appointment</a>
+                    <a class="btn btn-outline" href="gastric-diseases.php">View Treatment</a>
+                </div>
+            </div>
+            <div class="hero-copy" data-slide-content>
+                <div class="eyebrow">Care for Every Age</div>
+                <h1>Natural Care for Growing Families</h1>
+                <p>Patient-first guidance for children and families with thoughtful follow-ups and personalized support.</p>
+                <div class="hero-actions">
+                    <a class="btn" href="appointment.php">Book Appointment</a>
+                    <a class="btn btn-outline" href="childrens-problems.php">Child Care</a>
+                </div>
+            </div>
         </div>
         <button class="slider-arrow slider-prev" type="button" data-slider-prev aria-label="Previous image">&#10094;</button>
+        <div class="hero-banner hero-slider">
+            <div class="hero-slides">
+                <img class="hero-slide is-active" src="assets/images/home/homeopaty.png" alt="Homeopathy clinic">
+                <img class="hero-slide" src="assets/images/doctor.png" alt="Homeopathy doctor consultation">
+                <img class="hero-slide" src="assets/images/treatments/gastric.jpg" alt="Digestive health care">
+                <img class="hero-slide" src="assets/images/treatments/children.jpg" alt="Children's health care">
+            </div>
+        </div>
         <button class="slider-arrow slider-next" type="button" data-slider-next aria-label="Next image">&#10095;</button>
         <div class="slider-dots" aria-label="Slider navigation">
             <button class="slider-dot is-active" type="button" data-slide-to="0" aria-label="Show image 1"></button>
@@ -120,7 +160,7 @@ function service_icon(string $name): string
         <div class="row text-center">
             <div class="eyebrow">Our Treatment</div>
             <h2 class="font-heading font-bold">Evidence Based Homeopathic Treatments</h2>
-            <p style="color:var(--muted)">Explore our specialized treatment programs for chronic and complex health conditions in Surat
+            <p style="color:var(--muted)">Explore Our Special Treatments for Long-Term & Serious Health Problems in Surat
             </p>
         </div>
 
@@ -132,9 +172,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Mental Diseases</h3>
                     <p>
-                        Emotional imbalance, persistent stress, mood swings, and anxiety can deeply aff...
+                        Emotional problems, ongoing stress, mood changes & anxiety can affect your daily life. Our homeopathic treatment helps us understand the main cause of your problem and supports better emotional health for the long term.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="mental-diseases.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="mental-diseases.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -144,9 +187,13 @@ function service_icon(string $name): string
                     </div>
                     <h3>Gastric Diseases</h3>
                     <p>
-                        Digestive problems can affect comfort, energy, sleep, and daily routine.
+                        Stomach & digestive problems can affect how you feel every day. They may cause discomfort, low energy & problems with sleep or your daily routine. We understand your symptoms, food habits, lifestyle & overall health to provide treatment that suits your needs.
+
                     </p>
-                    <a class="btn" style="margin-top:15px" href="gastric-diseases.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="gastric-diseases.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -156,9 +203,13 @@ function service_icon(string $name): string
                     </div>
                     <h3>Skin Diseases</h3>
                     <p>
-                        Healthy skin reflects the well-being of the whole person.
+                        Healthy skin is important for feeling good & confident. Skin problems can be linked to many things, including your lifestyle & overall health. We understand your skin problems, possible triggers, lifestyle, medical history & overall health to provide treatment that suits your needs.
+
                     </p>
-                    <a class="btn" style="margin-top:15px" href="skin-diseases.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="skin-diseases.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -168,9 +219,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Gynaecological Problems</h3>
                     <p>
-                        Women's health concerns can affect the body, emotions, relationships, and daily life.
+                        Women’s health problems can affect your body, emotions, relationships & daily life. We understand your symptoms, periods, hormone changes, lifestyle & overall health to provide treatment that suits your needs.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="gynaecological-problems.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="gynaecological-problems.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -180,9 +234,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Neurological Disorders</h3>
                     <p>
-                        Nervous system concerns can affect movement, comfort, sleep, focus, and d...
+                        Nervous system problems can affect your movement, comfort, sleep, focus & daily life. We understand your symptoms, possible causes, medical history, lifestyle & overall health to provide treatment that suits your needs.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="neurological-disorders.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="neurological-disorders.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -192,9 +249,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Autoimmune Disorders</h3>
                     <p>
-                        Autoimmune conditions can affect different parts of the body and may change over ...
+                        Autoimmune problems can affect different parts of your body & may change over time. We understand your symptoms, medical history, lifestyle, test reports & overall health to provide treatment that suits your needs.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="autoimmune-disorders.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="autoimmune-disorders.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -204,9 +264,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Bone & Joint Diseases</h3>
                     <p>
-                        Bone, joint, and muscle concerns can affect movement, comfort, work, and sleep
+                        Bone, joint & muscle problems can make it difficult to move, work, sleep & feel comfortable. We understand your symptoms, movement problems, medical history, lifestyle & overall health to provide treatment that suits your needs.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="bone-joint-diseases.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="bone-joint-diseases.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -216,9 +279,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Respiratory Problems</h3>
                     <p>
-                        Breathing and respiratory concerns can affect energy, sleep, work, & daily comfort.
+                        Breathing problems can affect your energy, sleep, work & daily comfort. We understand your symptoms, possible causes, medical history, lifestyle & overall health to provide treatment that suits your needs.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="respiratory-problems.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="respiratory-problems.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
@@ -228,9 +294,12 @@ function service_icon(string $name): string
                     </div>
                     <h3>Children's Problems</h3>
                     <p>
-                        childhood health concerns can affect growth, development, comfort, and daily life.
+                        Children need special care for their age, growth, emotions & daily routine. We understand their symptoms, growth, habits, family history & overall health to provide treatment that suits their needs.
                     </p>
-                    <a class="btn" style="margin-top:15px" href="childrens-problems.php">View Service</a>
+                    <div class="service-actions">
+                        <a class="btn" href="childrens-problems.php">View Service</a>
+                        <a class="btn btn-appointment" href="appointment.php">Book Appointment</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -238,24 +307,30 @@ function service_icon(string $name): string
 <section class="section">
     <div class="container">
         <div class="stats">
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="stat">
+                <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="9" cy="8" r="3" />
                     <path d="M3 20c.5-4 2.5-6 6-6s5.5 2 6 6" />
                     <path d="M16 5a3 3 0 0 1 0 6M17 14c2.5.5 3.5 2.5 4 6" />
-                </svg><strong>1000+</strong><span>Patient Records</span></div>
+                </svg>
+                <strong>1000+</strong>
+                <span>Patient Records</span>
+            </div>
             <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="8" />
                     <path d="M12 7v5l3 2" />
-                </svg><strong>10+</strong><span>Years Experience</span></div>
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
+                </svg>
+                <strong>12+</strong>
+                <span>Years Experience</span>
+            </div>
+            <div class="stat">
+                <svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="8" />
                     <path d="M12 8v8M8 12h8" />
-                </svg><strong>1:1</strong><span>Personalized Care</span></div>
-            <div class="stat"><svg class="stat-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 5h16v14H4z" />
-                    <path d="M8 9h8M8 13h5" />
-                    <circle cx="17" cy="17" r="3" />
-                </svg><strong>24/7</strong><span>Inquiry Access</span></div>
+                </svg>
+                <strong>1:1</strong>
+                <span>Personalized Care</span>
+            </div>
         </div>
     </div>
 </section>
@@ -264,8 +339,8 @@ function service_icon(string $name): string
     <section class="section before-after-section" aria-labelledby="before-after-title">
         <div class="container">
             <div class="mb-5 text-center">
-                <h1 class="font-bold heading">Hear From Our Happy Patients</h1>
-                <p>Real Stories of Healing and Recovery at Janani Homeopathy Clinic in Surat</p>
+                <h1 class="font-bold heading">What Our Patients Say</h1>
+                <p>Real Stories of Recovery from Our Patients at Janani Homeopathy Clinic, Surat</p>
             </div>
             <div class="before-after-grid">
                 <?php foreach ($beforeAfterPairs as $pairIndex => $pair): if (count($pair) < 2) continue;
@@ -289,12 +364,12 @@ function service_icon(string $name): string
 <section class="section alt">
     <div class="container">
         <div class="section-head">
-            <div class="eyebrow">Latest From Our Clinic</div>
-            <h2>Health Articles & Updates</h2>
+            <div class="eyebrow">Latest Updates From Our Clinic</div>
+            <h2>Health Tips & Updates</h2>
         </div>
         <div class="blog-grid"><?php $blogs = array_slice(array_reverse($db['blogs']), 0, 3);
                                 if (!$blogs): ?><div class="card" style="grid-column:1/-1">
-                    <div class="empty">Blogs will appear here after the doctor adds them from the admin panel.</div>
+                    <div class="empty">New health articles & updates will appear here when the doctor adds them..</div>
                 </div><?php else: foreach ($blogs as $b): ?><article class="blog-card"><img src="<?= e($b['image'] ?: 'assets/images/logo.png') ?>" alt="<?= e($b['title']) ?>">
                         <div class="blog-body"><small><?= e(date_fmt($b['created_at'])) ?></small>
                             <h3><?= e($b['title']) ?></h3>
@@ -308,9 +383,9 @@ function service_icon(string $name): string
     <div class="container">
         <div class="form-card" style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
             <div>
-                <div class="eyebrow">Ready to Begin?</div>
-                <h2 style="margin:5px 0">Book Your Consultation</h2>
-                <p style="margin:0;color:var(--muted)">Choose a convenient date and time for your appointment.</p>
+                <div class="eyebrow">Ready to Start Your Treatment?</div>
+                <h2 style="margin:5px 0">Book Your Appointment</h2>
+                <p style="margin:0;color:var(--muted)">Choose a date & time that is convenient for you.</p>
             </div><a class="btn" href="appointment.php">Book Appointment</a>
         </div>
     </div>

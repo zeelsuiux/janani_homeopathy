@@ -26,16 +26,21 @@ $page_title = 'Results | Admin';
         <?php foreach ($items as $item): ?>
             <div class="admin-card result-card" data-search="<?= e(strtolower(($item['title'] ?? '') . ' ' . ($item['review'] ?? ''))) ?>">
                 <?php if (!empty($item['image'])): ?>
-                    <img src="../<?= e($item['image']) ?>" alt="<?= e($item['title']) ?>" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+                    <img class="result-card-image" src="../<?= e($item['image']) ?>" alt="<?= e($item['title']) ?>">
                 <?php endif; ?>
-                <h3><?= e($item['title']) ?></h3>
-                <p><?= nl2br(e($item['review'])) ?></p>
-                <div class="meta-row result-card-footer">
-                    <small><?= e($item['created_at'] ?? '') ?></small>
-                    <?php if ($canDelete): ?><form method="post" action="result-delete.php" onsubmit="return confirm('Delete this result?');">
-                        <input type="hidden" name="id" value="<?= (int)($item['id'] ?? 0) ?>">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form><?php endif; ?>
+                <div class="result-card-body">
+                    <h3><?= e($item['title']) ?></h3>
+                    <p><?= nl2br(e($item['review'])) ?></p>
+                    <div class="meta-row result-card-footer">
+                        <small><?= e($item['created_at'] ?? '') ?></small>
+                        <div class="result-card-actions">
+                        <?php if ($canEdit): ?><button type="button" class="btn btn-outline result-edit-btn" data-id="<?= (int)($item['id'] ?? 0) ?>" data-title="<?= e($item['title'] ?? '') ?>" data-review="<?= e($item['review'] ?? '') ?>">Edit</button><?php endif; ?>
+                        <?php if ($canDelete): ?><form method="post" action="result-delete.php" onsubmit="return confirm('Delete this result?');">
+                            <input type="hidden" name="id" value="<?= (int)($item['id'] ?? 0) ?>">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form><?php endif; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -58,6 +63,22 @@ $page_title = 'Results | Admin';
     </div>
 </div><?php endif; ?>
 
+<?php if ($canEdit): ?><div class="blog-modal" id="resultEditModal" aria-hidden="true">
+    <div class="blog-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="resultEditModalTitle">
+        <div class="blog-modal-header">
+            <h2 id="resultEditModalTitle">Edit Result</h2>
+            <button class="blog-modal-close" type="button" id="closeResultEditModal" aria-label="Close">&times;</button>
+        </div>
+        <form method="post" action="result-edit.php" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="editResultId">
+            <div class="field"><label for="editResultTitle">Result Name</label><input id="editResultTitle" type="text" name="title" required></div>
+            <div class="field"><label for="editResultReview">Review / Description</label><textarea id="editResultReview" name="review" rows="6" required></textarea></div>
+            <div class="field"><label for="editResultImage">Replace Image (optional)</label><input id="editResultImage" type="file" name="image" accept="image/jpeg,image/png,image/webp,image/gif"></div>
+            <div class="actions"><button type="submit" class="btn">Save Changes</button></div>
+        </form>
+    </div>
+</div><?php endif; ?>
+
 <script>
 (function(){
     const search=document.getElementById('resultSearch');
@@ -70,6 +91,12 @@ $page_title = 'Results | Admin';
     document.getElementById('closeResultModal')?.addEventListener('click',close);
     modal?.addEventListener('click',function(event){if(event.target===modal)close();});
     document.addEventListener('keydown',function(event){if(event.key==='Escape'&&modal?.classList.contains('show'))close();});
+    const editModal=document.getElementById('resultEditModal');
+    const closeEdit=function(){editModal?.classList.remove('show');editModal?.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+    document.querySelectorAll('.result-edit-btn').forEach(function(button){button.addEventListener('click',function(){document.getElementById('editResultId').value=button.dataset.id||'';document.getElementById('editResultTitle').value=button.dataset.title||'';document.getElementById('editResultReview').value=button.dataset.review||'';editModal.classList.add('show');editModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('editResultTitle').focus();});});
+    document.getElementById('closeResultEditModal')?.addEventListener('click',closeEdit);
+    editModal?.addEventListener('click',function(event){if(event.target===editModal)closeEdit();});
+    document.addEventListener('keydown',function(event){if(event.key==='Escape'&&editModal?.classList.contains('show'))closeEdit();});
 })();
 </script>
 

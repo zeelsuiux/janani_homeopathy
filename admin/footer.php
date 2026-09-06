@@ -7,4 +7,18 @@ if (adminMenuToggle && adminSidebar) {
 		adminMenuToggle.setAttribute('aria-expanded', String(open));
 	});
 }
+document.querySelectorAll('.admin-main table').forEach((table) => {
+	const rows = Array.from(table.rows);
+	const headerRow = rows.find((row) => row.querySelector('th'));
+	if (!headerRow) return;
+	const labels = Array.from(headerRow.cells).map((cell) => cell.textContent.trim());
+	table.classList.add('admin-card-table');
+	rows.forEach((row) => {
+		if (row === headerRow) return;
+		Array.from(row.cells).forEach((cell, index) => {
+			if (cell.colSpan > 1) return;
+			cell.dataset.label = labels[index] || '';
+		});
+	});
+});
 </script></body></html>

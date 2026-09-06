@@ -60,6 +60,14 @@ $treatment_pages = [
                     <a class="<?= in_array($current_page, ['blog.php', 'blog-detail.php'], true) ? 'active' : '' ?>" href="blog.php">Blog</a>
                     <a class="<?= $current_page === 'contact.php' ? 'active' : '' ?>" href="contact.php">Contact</a>
                     <a class="btn" href="appointment.php">Book Appointment</a>
+                    <label class="language-switcher" for="language-select">
+                        <span aria-hidden="true">文</span>
+                        <select id="language-select" aria-label="Select language">
+                            <option value="en">English</option>
+                            <option value="gu">ગુજરાતી</option>
+                            <option value="hi">हिन्दી</option>
+                        </select>
+                    </label>
             </nav>
         </div>
     </header>
