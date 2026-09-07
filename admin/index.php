@@ -56,7 +56,8 @@ foreach ($rows as $appt) {
 </div>
 <div class="form-card dashboard-appointments" style="margin-top:20px;">
     <h2>Upcoming Appointments</h2>
-    <div class="dashboard-appointment-tabs" role="tablist"><button type="button" class="dashboard-appointment-tab active" data-appointment-tab="today" role="tab" aria-selected="true">Today <span><?= count($todayRows) ?></span></button><button type="button" class="dashboard-appointment-tab" data-appointment-tab="tomorrow" role="tab" aria-selected="false">Tomorrow <span><?= count($tomorrowRows) ?></span></button></div><?php foreach (['today' => $todayRows, 'tomorrow' => $tomorrowRows] as $tab => $appointments): ?><div class="dashboard-appointment-panel <?= $tab === 'today' ? 'active' : '' ?>" data-appointment-panel="<?= e($tab) ?>">
+    <div class="dashboard-appointment-tabs" role="tablist">
+        <button type="button" class="dashboard-appointment-tab active" data-appointment-tab="today" role="tab" aria-selected="true">Today <span><?= count($todayRows) ?></span></button><button type="button" class="dashboard-appointment-tab" data-appointment-tab="tomorrow" role="tab" aria-selected="false">Tomorrow <span><?= count($tomorrowRows) ?></span></button></div><?php foreach (['today' => $todayRows, 'tomorrow' => $tomorrowRows] as $tab => $appointments): ?><div class="dashboard-appointment-panel <?= $tab === 'today' ? 'active' : '' ?>" data-appointment-panel="<?= e($tab) ?>">
             <div class="table-wrap">
                 <table>
                     <tr>

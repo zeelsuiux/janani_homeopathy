@@ -47,7 +47,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'bone-joint') ?>.jpg" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

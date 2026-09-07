@@ -4,14 +4,14 @@ $page_title = 'Skin Problems | ' . $s['clinic_name'];
 require 'header.php';
 
 $conditions = [
-    ['Vitiligo', 'Personalized homeopathy care for white patches & changes in skin colour.'],
-    ['Psoriasis', 'Support for dry, scaly, itchy, red or irritated skin & recurring flare-ups.'],
-    ['Eczema', 'Gentle care for itchy, dry, sensitive, irritated or inflamed skin.'],
-    ['Urticaria', 'Support for recurring hives, itchy patches, redness & swelling of the skin.'],
-    ['Acne', 'Personalized homeopathy care for pimples, blackheads, whiteheads & acne problems.'],
-    ['Warts', 'Support for common, recurring or uncomfortable skin warts.'],
-    ['Fungal Infections', 'Care for itching, redness, scaling & recurring fungal skin problems.'],
-    ['Hair Fall & Alopecia', 'Support for excessive hair fall, hair thinning, patchy hair loss & scalp problems.']
+    ['Vitiligo', 'Personalized homeopathy care for white patches & changes in skin colour.', 'vitiligo'],
+    ['Psoriasis', 'Support for dry, scaly, itchy, red or irritated skin & recurring flare-ups.', 'psoriasis'],
+    ['Eczema', 'Gentle care for itchy, dry, sensitive, irritated or inflamed skin.', 'eczema'],
+    ['Urticaria', 'Support for recurring hives, itchy patches, redness & swelling of the skin.', 'urticaria'],
+    ['Acne', 'Personalized homeopathy care for pimples, blackheads, whiteheads & acne problems.', 'acne'],
+    ['Warts', 'Support for common, recurring or uncomfortable skin warts.', 'warts'],
+    ['Fungal Infections', 'Care for itching, redness, scaling & recurring fungal skin problems.', 'fungal-infections'],
+    ['Hair Fall & Alopecia', 'Support for excessive hair fall, hair thinning, patchy hair loss & scalp problems.', 'hair-fall-alopecia']
 ];
 ?>
 
@@ -45,7 +45,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'skin') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

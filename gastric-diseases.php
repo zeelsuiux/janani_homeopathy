@@ -4,14 +4,14 @@ $page_title = 'Gastric Problems | ' . $s['clinic_name'];
 require 'header.php';
 
 $conditions = [
-    ['Acidity & GERD', 'Homeopathy care for acidity, heartburn, acid reflux, sour belching & burning discomfort.'],
-    ['Gastritis', 'Personalized homeopathy care for stomach irritation, pain, nausea & digestive problems.'],
-    ['Indigestion', 'Support for heaviness after meals, stomach discomfort, feeling full quickly & poor digestion.'],
-    ['Constipation', 'Homeopathy care for hard, difficult or irregular bowel movements.'],
-    ['IBS', 'Personalized care for stomach discomfort, irregular bowel movements, gas & bloating.'],
-    ['Stomach Ulcer Problems', 'Support for repeated stomach pain, burning & other ulcer-related problems.'],
-    ['Bloating & Gas', 'Homeopathy care for stomach bloating, gas, fullness & digestive discomfort.'],
-    ['Piles & Fissures', 'Support for pain, bleeding, itching & discomfort during bowel movements.']
+    ['Acidity & GERD', 'Homeopathy care for acidity, heartburn, acid reflux, sour belching & burning discomfort.', 'acidity-gerd'],
+    ['Gastritis', 'Personalized homeopathy care for stomach irritation, pain, nausea & digestive problems.', 'gastritis'],
+    ['Indigestion', 'Support for heaviness after meals, stomach discomfort, feeling full quickly & poor digestion.', 'indigestion'],
+    ['Constipation', 'Homeopathy care for hard, difficult or irregular bowel movements.', 'constipation'],
+    ['IBS', 'Personalized care for stomach discomfort, irregular bowel movements, gas & bloating.', 'ibs'],
+    ['Stomach Ulcer Problems', 'Support for repeated stomach pain, burning & other ulcer-related problems.', 'stomach-ulcer-problems'],
+    ['Bloating & Gas', 'Homeopathy care for stomach bloating, gas, fullness & digestive discomfort.', 'bloating-gas'],
+    ['Piles & Fissures', 'Support for pain, bleeding, itching & discomfort during bowel movements.', 'piles-fissures']
 ];
 ?>
 
@@ -50,9 +50,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon">
-                        <?= treatment_icon($condition[0], $conditionIndex) ?>
-                    </div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'gastric') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

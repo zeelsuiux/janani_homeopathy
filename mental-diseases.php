@@ -36,17 +36,18 @@ require 'header.php';
         <div class="feature-list">
             <?php foreach (
                 [
-                    ['Anxiety & Stress', 'Homeopathy support for excessive worry, nervousness, tension & stress that affects daily life.'],
-                    ['Depression', 'Support for ongoing sadness, low mood, loss of interest & emotional tiredness.'],
-                    ['Phobias & Fears', 'Personalized care for strong fears, anxiety & avoiding certain situations or things.'],
-                    ['OCD', 'Support for repeated unwanted thoughts & repetitive actions or habits.'],
-                    ['Panic Attacks', 'Care for sudden fear, breathing problems, fast heartbeat & other panic symptoms.'],
-                    ['Sleep Problems', 'Support for difficulty sleeping, disturbed sleep, waking up often or an irregular sleep routine.'],
-                    ['Mood & Behaviour Problems', 'Personalized care for mood changes, irritability, anger & emotional or behaviour problems.']
+                    ['Anxiety & Stress', 'Homeopathy support for excessive worry, nervousness, tension & stress that affects daily life.', 'anxiety-stress-in-surat'],
+                    ['Depression', 'Support for ongoing sadness, low mood, loss of interest & emotional tiredness.', 'depression'],
+                    ['Phobias & Fears', 'Personalized care for strong fears, anxiety & avoiding certain situations or things.', 'phobias-fears'],
+                    ['OCD', 'Support for repeated unwanted thoughts & repetitive actions or habits.', 'ocd'],
+                    ['Panic Attacks', 'Care for sudden fear, breathing problems, fast heartbeat & other panic symptoms.', 'panic-attacks'],
+                    ['Mood Changes', 'Support for irritability, anger, emotional outbursts & mood swings.', 'mood-changes'],
+                    ['Sleep Problems', 'Support for difficulty sleeping, disturbed sleep, waking up often or an irregular sleep routine.', 'sleep-problems'],
+                    ['Mood & Behaviour Problems', 'Personalized care for mood changes, irritability, anger & emotional or behaviour problems.', 'mood-behaviour-problems']
                 ] as $conditionIndex => $condition
             ): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><?= treatment_icon($condition[0], $conditionIndex) ?></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'mental') ?>.<?= in_array($condition[2] ?? '', ['anxiety-stress-in-surat', 'depression', 'phobias-fears', 'ocd', 'panic-attacks', 'mood-changes', 'sleep-problems', 'mood-behaviour-problems'], true) ? 'png' : 'jpg' ?>" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>
