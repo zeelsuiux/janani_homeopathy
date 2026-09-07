@@ -1,39 +1,35 @@
 <?php require 'includes.php';
 $s = settings();
-$page_title = 'Autoimmune Disorders | ' . $s['clinic_name'];
+$page_title = 'Autoimmune Problems | ' . $s['clinic_name'];
 require 'header.php';
+
 $conditions = [
-    ['Hashimoto&apos;s Thyroiditis', 'Support for thyroid-related symptoms, energy changes, and autoimmune thyroid concerns.'],
-    ['Rheumatoid Arthritis', 'Personalized care for joint pain, stiffness, swelling, and recurring inflammatory discomfort.'],
-    ['Psoriasis', 'Guidance for recurring scaly, itchy, or inflamed skin associated with immune-related concerns.'],
-    ['Vitiligo', 'Support for changes in skin pigmentation and the appearance of white patches.'],
-    ['SLE', 'Holistic support while considering the individual symptoms and systemic naturse of lupus.'],
-    ['Scleroderma', 'Individualized supportive care for skin changes, stiffness, and related health concerns.'],
-    ['Sjögren&apos;s Syndrome', 'Care focused on dryness, fatigue, discomfort, and the person&apos;s overall health pattern.'],
-    ['Other Autoimmune Conditions', 'Personalized evaluation and supportive care for other immune-related complaints.']
+    ['Autoimmune Thyroid Problem', 'Personalized homeopathy care for thyroid-related symptoms, tiredness, energy changes & other thyroid problems.'],
+    ['Rheumatoid Arthritis', 'Support for joint pain, stiffness, swelling & recurring discomfort.'],
+    ['Psoriasis', 'Personalized care for dry, scaly, itchy or inflamed skin problems.'],
+    ['Vitiligo', 'Support for white patches & changes in skin colour.'],
+    ['SLE', 'Personalized supportive care based on your symptoms, overall health & individual needs.'],
+    ['Scleroderma', 'Support for skin changes, stiffness & other related health problems.'],
+    ['Dry Eyes & Dry Mouth Syndrome', 'Care for dryness, tiredness, discomfort & overall health concerns.'],
+    ['Other Autoimmune Problems', 'Personalized evaluation & supportive care for other immune-related health problems.']
 ];
 ?>
 
 <section class="treatment-hero">
     <div class="container treatment-hero-grid">
         <div>
-            <div class="eyebrow">Homeopathic Immune Health Care</div>
-            <h1>Autoimmune Disorders</h1>
-            <p>Autoimmune conditions can affect different parts of the body and may change over time. Our personalized approach considers your symptoms, medical history, lifestyle, investigations, and overall health.</p>
+            <div class="eyebrow">Homeopathy for Autoimmune Problems</div>
+            <h1>Autoimmune Problems</h1>
+            <p>Autoimmune problems can affect different parts of the body & may change over time. Our personalized homeopathy care understands your symptoms, health history, lifestyle, medical reports & overall health.</p>
+
             <div class="actions">
                 <a class="btn" href="appointment.php">Book Consultation</a>
                 <a class="btn btn-outline" href="contact.php">Consult Doctor</a>
             </div>
-            <div class="treatment-badges">
-                <?php foreach ($conditions as $condition): ?><span><?= e(html_entity_decode($condition[0], ENT_QUOTES, 'UTF-8')) ?></span><?php endforeach; ?>
-            </div>
         </div>
-        <div class="treatment-visual">
-            <img src="assets/images/treatments/autoimmune-disorders.png" onerror="this.src='assets/images/doctor.png'" alt="Autoimmune care">
-            <div class="mini-card">
-                <strong>Personalized Immune Care</strong>
-                <span>Respectful, supportive care based on your symptoms, health history, investigations, and individual needs.</span>
-            </div>
+
+        <div class="treatment-visual">  
+            <img src="assets/images/treatments/autoimmune-disorders.png" onerror="this.src='assets/images/doctor.png'" alt="Homeopathy care for autoimmune problems">
         </div>
     </div>
 </section>
@@ -42,9 +38,10 @@ $conditions = [
     <div class="container">
         <div class="section-head">
             <div class="eyebrow">Autoimmune Health Care</div>
-            <h2>Conditions we support</h2>
-            <p>Individualized support for thyroid, joint, skin, systemic, and immune-related concerns.</p>
+            <h2>Problems We Help With</h2>
+            <p>Personalized support for thyroid, joint, skin & other immune-related health problems.</p>
         </div>
+
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
@@ -60,29 +57,33 @@ $conditions = [
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <div class="eyebrow">Symptoms &amp; Health Factors</div>
-            <h2>Concerns to discuss with a doctor</h2>
+            <div class="eyebrow">Symptoms & Possible Causes</div>
+            <h2>Common Signs & Possible Reasons</h2>
         </div>
+
         <div class="two-col-grid">
             <div class="info-panel">
-                <h2>Common symptoms may include:</h2>
+                <h2>Common problems may include:</h2>
+
                 <ul class="check-list">
-                    <li>Persistent tiredness, weakness, or low energy</li>
-                    <li>Joint pain, stiffness, swelling, or reduced movement</li>
-                    <li>Skin rashes, dryness, scaling, or pigmentation changes</li>
-                    <li>Unusual dryness of the eyes or mouth</li>
-                    <li>Temperature sensitivity, weight, or thyroid-related changes</li>
-                    <li>Recurring flare-ups or symptoms affecting multiple body systems</li>
+                    <li>Ongoing tiredness, weakness or low energy</li>
+                    <li>Joint pain, stiffness, swelling or difficulty moving</li>
+                    <li>Skin rashes, dryness, scaling or changes in skin colour</li>
+                    <li>Dry eyes or dry mouth</li>
+                    <li>Changes in body temperature, weight or thyroid-related symptoms</li>
+                    <li>Recurring symptoms affecting different parts of the body</li>
                 </ul>
             </div>
+
             <div class="info-panel">
-                <h2>Possible contributing factors:</h2>
+                <h2>Possible reasons for these problems:</h2>
+
                 <ul class="check-list">
-                    <li>Family history and genetic susceptibility</li>
-                    <li>Hormonal, metabolic, or immune-related factors</li>
-                    <li>Stress, poor sleep, or lifestyle imbalance</li>
+                    <li>Family history or genetic factors</li>
+                    <li>Hormonal, body-related or immune system changes</li>
+                    <li>Stress, poor sleep or lifestyle problems</li>
                     <li>Past infections or environmental triggers</li>
-                    <li>Other underlying health conditions</li>
+                    <li>Other underlying health problems</li>
                 </ul>
             </div>
         </div>
@@ -93,12 +94,27 @@ $conditions = [
     <div class="container">
         <div class="section-head">
             <div class="eyebrow">Our Care Approach</div>
-            <h2>Care that looks at the complete picture</h2>
+            <h2>Personalized Care for Your Health</h2>
         </div>
+
         <div class="steps-grid">
-            <div class="step-box"><span>01</span><h3>Detailed Evaluation</h3><p>We review your symptoms, diagnosis, reports, medicines, medical history, lifestyle, and health concerns.</p></div>
-            <div class="step-box"><span>02</span><h3>Personalized Plan</h3><p>Your supportive care plan is selected according to your individual symptoms and overall health needs.</p></div>
-            <div class="step-box"><span>03</span><h3>Follow-up Support</h3><p>Regular follow-up helps monitor changes and coordinate responsible ongoing care.</p></div>
+            <div class="step-box">
+                <span>01</span>
+                <h3>Your Problem</h3>
+                <p>We understand your symptoms, diagnosis, medical reports, medicines, health history, lifestyle & overall concerns.</p>
+            </div>
+
+            <div class="step-box">
+                <span>02</span>
+                <h3>Personalized Treatment</h3>
+                <p>We provide personalized supportive homeopathy care based on your symptoms & overall health needs.</p>
+            </div>
+
+            <div class="step-box">
+                <span>03</span>
+                <h3>Regular Follow-Up</h3>
+                <p>Regular follow-ups help us understand changes in your symptoms & provide ongoing support for your health.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -106,9 +122,22 @@ $conditions = [
 <section class="section">
     <div class="container">
         <div class="faq-list">
-            <details open><summary>What are autoimmune disorders?</summary><p>Autoimmune disorders occur when the immune system mistakenly reacts against the body&apos;s own cells or tissues. They can affect one or several parts of the body.</p></details>
-            <details><summary>Should I continue my current medical treatment?</summary><p>Do not stop or change prescribed medicines without speaking to your treating doctor. Supportive care should be discussed with your healthcare team.</p></details>
-            <details><summary>When should I seek urgent medical care?</summary><p>Seek prompt medical attention for severe breathing difficulty, chest pain, sudden weakness, fainting, severe allergic symptoms, rapidly worsening swelling, or any emergency symptom.</p></details>
+
+            <details open>
+                <summary>What are autoimmune problems?</summary>
+                <p>Autoimmune problems happen when the body's immune system reacts against its own cells or tissues. These problems can affect one or different parts of the body.</p>
+            </details>
+
+            <details>
+                <summary>Should I continue my current medical treatment?</summary>
+                <p>Yes. Do not stop or change any prescribed medicine without speaking to your treating doctor. Always discuss any additional treatment with your healthcare professional.</p>
+            </details>
+
+            <details>
+                <summary>When should I seek urgent medical help?</summary>
+                <p>Seek urgent medical help for severe breathing problems, chest pain, sudden weakness, fainting, severe allergic reactions, rapidly increasing swelling or any serious emergency symptoms.</p>
+            </details>
+
         </div>
     </div>
 </section>
@@ -117,10 +146,11 @@ $conditions = [
     <div class="container">
         <div class="cta-box">
             <div>
-                <div class="eyebrow">Take the first step</div>
-                <h2>Ready to discuss your health concerns?</h2>
-                <p>Book a consultation for thyroid, joint, skin, systemic, or other autoimmune concerns.</p>
+                <div class="eyebrow">Take the First Step</div>
+                <h2>Ready to Talk About Your Health?</h2>
+                <p>If thyroid, joint, skin or other autoimmune problems are affecting your daily life, book a consultation for personalized homeopathy care.</p>
             </div>
+
             <a class="btn" href="appointment.php">Book an Appointment</a>
         </div>
     </div>

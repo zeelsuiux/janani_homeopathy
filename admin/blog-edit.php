@@ -1,1 +1,61 @@
-<?php require_once __DIR__.'/_common.php';$id=(int)$_GET['id'];foreach($D['blogs'] as $i=>$x)if((int)$x['id']===$id)$idx=$i;if(!isset($idx))exit('Not found');$b=$D['blogs'][$idx];if($_SERVER['REQUEST_METHOD']==='POST'){verify_csrf();$b['title']=trim($_POST['title']);$b['slug']=slugify($_POST['slug']?:$b['title']);$b['excerpt']=trim($_POST['excerpt']);$b['content']=$_POST['content'];$b['author']=trim($_POST['author']);$b['status']=$_POST['status']==='published'?'published':'draft';$b['updated_at']=date('Y-m-d H:i:s');$im=upload_image('image','blog');if($im){delete_upload($b['image']);$b['image']=$im;}$D['blogs'][$idx]=$b;save_db($D);header('Location: blogs.php');exit;}ah('Edit Blog');?><div class="panel"><form method="post" enctype="multipart/form-data" class="form-grid"><?=csrf_field()?><div class="field"><label>Title</label><input name="title" value="<?=e($b['title'])?>" required></div><div class="field"><label>Slug</label><input name="slug" value="<?=e($b['slug'])?>"></div><div class="field full"><label>Excerpt</label><textarea name="excerpt"><?=e($b['excerpt'])?></textarea></div><div class="field full"><label>Content</label><textarea name="content" required><?=e($b['content'])?></textarea></div><div class="field"><label>Author</label><input name="author" value="<?=e($b['author'])?>"></div><div class="field"><label>Status</label><select name="status"><option value="draft" <?=$b['status']==='draft'?'selected':''?>>Draft</option><option value="published" <?=$b['status']==='published'?'selected':''?>>Published</option></select></div><div class="field full"><input type="file" name="image" accept="image/*"></div><div class="field full"><button class="btn">Update</button></div></form></div><?php af();
+<?php
+require 'header.php';
+admin_require_permission('edit');
+$db = db_load();
+$id = get('id');
+$index = null;
+foreach ($db['blogs'] as $i => $blog) {
+    if (($blog['id'] ?? '') === $id) {
+        $index = $i;
+        break;
+    }
+}
+if ($index === null) {
+    http_response_code(404);
+    exit('Blog not found.');
+}
+$blog = $db['blogs'][$index];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $blog['title'] = trim(post('title'));
+    $blog['content'] = post('content');
+    $image = upload_image('image');
+    if ($image) $blog['image'] = $image;
+    $blog['updated_at'] = now_iso();
+    $db['blogs'][$index] = $blog;
+    db_save($db);
+    redirect('blogs.php');
+}
+?>
+<div class="admin-top">
+    <h1>Edit Blog</h1><a class="btn btn-light" href="blogs.php">Back to Blogs</a>
+</div>
+<div class="admin-card">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-grid">
+            <div class="field full"><label for="blogTitle">Blog Title</label><input id="blogTitle" required name="title" value="<?= e($blog['title'] ?? '') ?>"></div>
+            <div class="field"><label for="blogImage">Featured Image</label><input id="blogImage" type="file" name="image" accept="image/*"></div>
+            <?php if (!empty($blog['image'])): ?><div class="field"><label>Current Image</label><img src="../<?= e($blog['image']) ?>" alt="<?= e($blog['title'] ?? '') ?>" style="width:140px;height:90px;object-fit:cover;border-radius:6px"></div><?php endif; ?>
+            <div class="field full"><label for="blogContent">Content</label>
+                <div class="toolbar"><button type="button" onclick="cmd('bold')"><b>B</b></button><button type="button" onclick="cmd('italic')"><i>I</i></button><button type="button" onclick="cmd('underline')"><u>U</u></button><span class="font-size-options" role="radiogroup" aria-label="Font size"><button type="button" class="font-size-button" aria-label="Small" aria-pressed="false" onmousedown="event.preventDefault()" onclick="setFontSize('1', this)">Small</button><button type="button" class="font-size-button active" aria-label="Normal" aria-pressed="true" onmousedown="event.preventDefault()" onclick="setFontSize('3', this)">Normal</button><button type="button" class="font-size-button" aria-label="Large" aria-pressed="false" onmousedown="event.preventDefault()" onclick="setFontSize('5', this)">Large</button><button type="button" class="font-size-button" aria-label="Extra large" aria-pressed="false" onmousedown="event.preventDefault()" onclick="setFontSize('7', this)">Extra Large</button></span></div>
+                <div id="editor" class="rich" contenteditable="true"><?= ($blog['content'] ?? '') ?></div><textarea hidden name="content" id="content"></textarea>
+            </div>
+            <div class="field full"><button class="btn" type="submit" onclick="document.getElementById('content').value=document.getElementById('editor').innerHTML">Update Blog</button></div>
+        </div>
+    </form>
+</div>
+<script>
+    function cmd(command, value) {
+        document.execCommand(command, false, value || null);
+    }
+
+    function setFontSize(value, button) {
+        document.execCommand('fontSize', false, value);
+        document.querySelectorAll('.font-size-button').forEach(function(item) {
+            item.classList.remove('active');
+            item.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+    }
+</script>
+<?php require 'footer.php'; ?>

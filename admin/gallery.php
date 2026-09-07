@@ -654,7 +654,7 @@ uksort($groups, function ($a, $b) {
     <div class="gallery-list">
     <?php foreach ($groups as $name => $images): ?>
 
-        <div class="form-card gallery-card" data-search="<?= e(strtolower($name)) ?>">
+        <div class="form-card gallery-card" data-date="<?= e(max(array_map(fn($image) => $image['created_at'] ?? '', $images))) ?>" data-search="<?= e(strtolower($name)) ?>">
 
             <div class="gallery-card-head">
 

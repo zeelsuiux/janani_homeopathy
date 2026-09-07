@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = db_load();
     $matched = null;
     foreach (($db['admins'] ?? []) as $admin) {
-        if (($admin['username'] ?? '') === $username && (password_verify($password, $admin['password'] ?? '') || $password === ($admin['password'] ?? ''))) {
+        if (($admin['role'] ?? 'subadmin') === 'subadmin' && ($admin['username'] ?? '') !== '' && ($admin['username'] ?? '') === $username && (password_verify($password, $admin['password'] ?? '') || $password === ($admin['password'] ?? ''))) {
             $matched = $admin;
             break;
         }

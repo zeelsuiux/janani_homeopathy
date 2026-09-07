@@ -1,0 +1,479 @@
+[
+    {
+        "id": "d61aa23da40411ba",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-03 14:04:21",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "b420f83dbcb08642",
+        "admin_id": "53c3f5da24a31e13",
+        "admin_username": "zeels",
+        "action": "Updated application data",
+        "created_at": "2026-09-03 14:05:01",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "2925970b988a0714",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-03 14:19:04",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "c671aab5cbf45ead",
+        "admin_id": "53c3f5da24a31e13",
+        "admin_username": "zeels",
+        "action": "Updated application data",
+        "created_at": "2026-09-05 07:39:08",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "fde43c971b8b577b",
+        "admin_id": "53c3f5da24a31e13",
+        "admin_username": "zeels",
+        "action": "Updated application data",
+        "created_at": "2026-09-05 07:39:24",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "3de475638b0acb0e",
+        "admin_id": "53c3f5da24a31e13",
+        "admin_username": "zeels",
+        "action": "Updated application data",
+        "created_at": "2026-09-05 07:40:42",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "2b893d5af06d868a",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-05 07:41:29",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "a179b3ea344fb257",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 05:12:45",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "9a2af1c7068d2f1f",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 05:13:45",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "6bb8936dab3ac1e3",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 05:23:19",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "a000e9d894b9dfdd",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 05:24:13",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "22c857db2a42731b",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 05:24:16",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "c5131edcaea02928",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:02:55",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "2793a773bb19cb51",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:07:27",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "fe3c9e42ab6e98e4",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:07:31",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "f78cf5262d4dd231",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:07:34",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "68735a2fcaaeb988",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:07:42",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "f1b451f9fbec6437",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:07:43",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "3c81091b599d6555",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:39",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "d122900397e7dfb7",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:41",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "cbaf4124de97ff43",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:44",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "244280340493c8fb",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:47",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "274dc05744405081",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:49",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "19b37d732779ef71",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:49",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "fdf80738855b99fc",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:09:52",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "e5c0b2b9c64441b6",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:10:00",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "50f760ff13c80a0c",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:10:02",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "388f3f52ff04e3ab",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:10:03",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "27ff2b33d005fb40",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:10:09",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "2c6487f43e9b799e",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:10:39",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "de1b66e41ab6f79c",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:10:44",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "c9ca6598d2c207ac",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:12:55",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "65d06347f4168c81",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:13:00",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "94d5fa40373a237d",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:14:34",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "735aa54cd1c46a82",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:14:35",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "ef3cb3e2364f76e4",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:14:37",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "dfc96ffdb3e32f8e",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:14:38",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "201a178a0686747a",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:14:42",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "ef6e0ff20dbe4b2e",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:17:53",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "08a4e89c372493ed",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:18:40",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "786a6188d9e6f4f1",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:18:48",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "84dee39d9da71c4f",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:20:07",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "92a98a2a5bc811af",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:20:18",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "af822a2ec69a183b",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:20:30",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "5adb2387f52245a3",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:20:43",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "ca20a332307cc612",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:20:53",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "b8da75697a4f7790",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:34:42",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "7e364e928546294b",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 10:34:49",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "8840ffc81a520d7a",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 11:00:40",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "1eb1320ee197aff0",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 11:02:51",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "f07ade9a4b564fc3",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 11:03:35",
+        "first_seen_at": "2026-09-07 14:53:34",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "b56974244e528615",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 14:56:19",
+        "first_seen_at": "2026-09-07 14:56:31",
+        "last_seen_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "3aaf28fb727fef57",
+        "admin_id": "master",
+        "admin_username": "admin",
+        "action": "Updated application data",
+        "created_at": "2026-09-07 14:56:31",
+        "first_seen_at": "2026-09-07 14:59:45",
+        "last_seen_at": "2026-09-07 14:59:45"
+    }
+]

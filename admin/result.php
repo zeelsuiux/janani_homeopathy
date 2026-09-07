@@ -24,7 +24,7 @@ $page_title = 'Results | Admin';
 <?php else: ?>
     <div class="admin-card-grid" id="resultsGrid">
         <?php foreach ($items as $item): ?>
-            <div class="admin-card result-card" data-search="<?= e(strtolower(($item['title'] ?? '') . ' ' . ($item['review'] ?? ''))) ?>">
+            <div class="admin-card result-card" data-date="<?= e($item['created_at'] ?? '') ?>" data-search="<?= e(strtolower(($item['title'] ?? '') . ' ' . ($item['review'] ?? ''))) ?>">
                 <?php if (!empty($item['image'])): ?>
                     <img class="result-card-image" src="../<?= e($item['image']) ?>" alt="<?= e($item['title']) ?>">
                 <?php endif; ?>

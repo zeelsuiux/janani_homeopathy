@@ -14,6 +14,9 @@ $current_page = basename($_SERVER['PHP_SELF'] ?? ''); ?>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><?= e($page_title ?? 'Admin Panel') ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: <?= e($s['primary_color']) ?>;
@@ -22,6 +25,8 @@ $current_page = basename($_SERVER['PHP_SELF'] ?? ''); ?>
         }
     </style>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin-date-filter.css">
+    <script src="../assets/js/admin-date-filter.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 </head>
@@ -39,9 +44,10 @@ $current_page = basename($_SERVER['PHP_SELF'] ?? ''); ?>
             <a class="<?= in_array($current_page, ['blogs.php', 'blog-add.php', 'blog-edit.php'], true) ? 'active' : '' ?>" href="blogs.php">Blogs</a>
             <a class="<?= $current_page === 'gallery.php' ? 'active' : '' ?>" href="gallery.php">Gallery</a>
             <a class="<?= in_array($current_page, ['result.php', 'result-add.php'], true) ? 'active' : '' ?>" href="result.php">Results</a>
+            <a class="<?= $current_page === 'finance.php' ? 'active' : '' ?>" href="finance.php">Finance</a>
             <?php if (current_admin_is_master()): ?>
                 <a class="<?= $current_page === 'backup.php' ? 'active' : '' ?>" href="backup.php">Backup</a>
-                <a class="<?= $current_page === 'manage-users.php' ? 'active' : '' ?>" href="manage-users.php">Admin Users</a>
+                <a class="<?= in_array($current_page, ['manage-users.php', 'admin-user-edit.php', 'admin-user-view.php'], true) ? 'active' : '' ?>" href="manage-users.php">Admin Users</a>
                 <a class="<?= $current_page === 'settings.php' ? 'active' : '' ?>" href="settings.php">Settings</a>
             <?php endif; ?>
             <a href="logout.php">Logout</a>

@@ -1,58 +1,48 @@
 <?php require 'includes.php';
 $s = settings();
-$page_title = 'Mental Diseases | ' . $s['clinic_name'];
+$page_title = 'Mental Health Treatment | ' . $s['clinic_name'];
 require 'header.php';
 ?>
 
 <section class="treatment-hero">
     <div class="container treatment-hero-grid">
         <div>
-            <div class="eyebrow">Homeopathic Psychiatric Care</div>
-            <h1>Mental Diseases</h1>
-            <p>Emotional imbalance, persistent stress, mood swings, and anxiety can deeply affect daily life. Our homeopathic approach focuses on understanding the root cause and supporting long-term emotional well-being.</p>
+            <div class="eyebrow">Homeopathy for Mental Health</div>
+            <h1>Mental Health Problems</h1>
+            <p>Stress, anxiety, mood changes & emotional problems can affect your daily life. Our personalized homeopathy treatment focuses on understanding your problems & supporting your overall mental well-being.</p>
             <div class="actions">
                 <a class="btn" href="appointment.php">Book Consultation</a>
                 <a class="btn btn-outline" href="contact.php">Consult Doctor</a>
             </div>
-            <div class="treatment-badges">
-                <span>Anxiety &amp; Stress</span>
-                <span>Depression</span>
-                <span>Phobias &amp; Fears</span>
-                <span>OCD</span>
-                <span>Panic Attacks</span>
-                <span>Sleep Disorders</span>
-                <span>Mood &amp; Behavioural Problems</span>
-            </div>
         </div>
-
         <div class="treatment-visual">
-            <img src="assets/images/treatments/mental-diseases.png" alt="Mental wellness care">
+            <img src="assets/images/treatments/mental-diseases.png" alt="Mental health care">
             <div class="mini-card">
                 <strong>Personalized Care</strong>
-                <span>Natural, gentle homeopathic treatment with a holistic view of mind and body.</span>
+                <span>Personalized homeopathy treatment based on your mental, emotional & physical health.</span>
             </div>
         </div>
     </div>
+
 </section>
 
 <section class="section alt">
     <div class="container">
         <div class="section-head">
             <div class="eyebrow">Mental Health Care</div>
-            <h2>Conditions we support</h2>
-            <p>Personalized care for emotional, mental, sleep, and behavioural concerns.</p>
+            <h2>Problems We Help With</h2>
+            <p>Personalized homeopathy care for stress, anxiety, mood, sleep & emotional problems.</p>
         </div>
-
         <div class="feature-list">
             <?php foreach (
                 [
-                    ['Anxiety & Stress', 'Support for excessive worry, nervousness, tension, and stress affecting everyday life.'],
-                    ['Depression', 'Compassionate care for persistent sadness, low mood, loss of interest, and emotional exhaustion.'],
-                    ['Phobias & Fears', 'Guidance for intense fears, avoidance, and anxiety triggered by specific situations or objects.'],
-                    ['OCD', 'Individualized support for recurring unwanted thoughts and repetitive behaviours or rituals.'],
-                    ['Panic Attacks', 'Care for sudden episodes of intense fear, physical discomfort, breathlessness, or a racing heartbeat.'],
-                    ['Sleep Disorders', 'Support for difficulty sleeping, disturbed sleep, frequent waking, or an irregular sleep routine.'],
-                    ['Mood & Behavioural Problems', 'Holistic care for mood changes, irritability, emotional outbursts, and behavioural concerns.']
+                    ['Anxiety & Stress', 'Homeopathy support for excessive worry, nervousness, tension & stress that affects daily life.'],
+                    ['Depression', 'Support for ongoing sadness, low mood, loss of interest & emotional tiredness.'],
+                    ['Phobias & Fears', 'Personalized care for strong fears, anxiety & avoiding certain situations or things.'],
+                    ['OCD', 'Support for repeated unwanted thoughts & repetitive actions or habits.'],
+                    ['Panic Attacks', 'Care for sudden fear, breathing problems, fast heartbeat & other panic symptoms.'],
+                    ['Sleep Problems', 'Support for difficulty sleeping, disturbed sleep, waking up often or an irregular sleep routine.'],
+                    ['Mood & Behaviour Problems', 'Personalized care for mood changes, irritability, anger & emotional or behaviour problems.']
                 ] as $conditionIndex => $condition
             ): ?>
                 <div class="feature-card">
@@ -68,27 +58,26 @@ require 'header.php';
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <div class="eyebrow">What Are Mental Diseases?</div>
-            <h2>When the mind needs care, healing should be compassionate and complete.</h2>
+            <div class="eyebrow">About Mental Health Problems</div>
+            <h2>Your Mental Health Is Important</h2>
         </div>
-
         <div class="feature-list">
             <div class="feature-card">
                 <div class="icon">✚</div>
-                <h3>Understanding the Condition</h3>
-                <p>Mental diseases include disorders that affect thoughts, emotions, behavior, and daily functioning. These conditions can range from mild stress and anxiety to deeper mood or behavioral disorders.</p>
+                <h3>Understanding the Problem</h3>
+                <p>Mental health problems can affect your thoughts, emotions, behaviour & daily life. Problems can be different for every person.</p>
             </div>
 
             <div class="feature-card">
                 <div class="icon">✚</div>
-                <h3>Common Examples</h3>
-                <p>Anxiety disorders, depression, bipolar disorder, obsessive-compulsive disorder, and trauma-related conditions are among the most common mental health concerns seen in practice.</p>
+                <h3>Common Problems</h3>
+                <p>Anxiety, depression, stress, OCD, mood changes, fears & sleep problems are some common mental health concerns.</p>
             </div>
 
             <div class="feature-card">
                 <div class="icon">✚</div>
-                <h3>Holistic Recovery</h3>
-                <p>With careful evaluation of the individual’s symptoms, life patterns, triggers, and habits, homeopathy aims to support balance and long-term emotional stability.</p>
+                <h3>Personalized Care</h3>
+                <p>We understand your symptoms, daily routine, possible triggers, habits & overall health to provide personalized homeopathy care.</p>
             </div>
         </div>
     </div>
@@ -97,31 +86,30 @@ require 'header.php';
 <section class="section alt">
     <div class="container">
         <div class="section-head">
-            <div class="eyebrow">Symptoms & Causes</div>
-            <h2>Signs to watch for</h2>
+            <div class="eyebrow">Symptoms & Possible Causes</div>
+            <h2>Common Signs & Possible Reasons</h2>
         </div>
-
         <div class="two-col-grid">
             <div class="info-panel">
                 <h2>Common symptoms include:</h2>
                 <ul class="check-list">
-                    <li>Persistent sadness, hopelessness, or low mood</li>
-                    <li>Excessive worry, fear, or nervousness</li>
-                    <li>Changes in sleep, appetite, or energy</li>
-                    <li>Difficulty concentrating or remembering</li>
-                    <li>Frequent irritability, anger, or emotional outbursts</li>
-                    <li>Withdrawal from relationships or social activities</li>
+                    <li>Ongoing sadness or low mood</li>
+                    <li>Too much worry, fear or nervousness</li>
+                    <li>Changes in sleep, appetite or energy</li>
+                    <li>Difficulty focusing or remembering things</li>
+                    <li>Frequent irritability, anger or emotional outbursts</li>
+                    <li>Avoiding people or social activities</li>
                 </ul>
             </div>
 
             <div class="info-panel">
-                <h2>Possible causes may include:</h2>
+                <h2>Possible reasons for these problems:</h2>
                 <ul class="check-list">
-                    <li>Stress, trauma, or emotional pressure</li>
-                    <li>Family history and genetic predisposition</li>
-                    <li>Biological or chemical imbalances</li>
-                    <li>Substance use or lifestyle imbalance</li>
-                    <li>Long-term unresolved emotional issues</li>
+                    <li>Stress, emotional pressure or difficult experiences</li>
+                    <li>Family history</li>
+                    <li>Changes in body or brain function</li>
+                    <li>Unhealthy lifestyle or substance use</li>
+                    <li>Long-term emotional stress or personal problems</li>
                 </ul>
             </div>
         </div>
@@ -131,27 +119,26 @@ require 'header.php';
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <div class="eyebrow">How Homeopathy Works</div>
-            <h2>Gentle treatment with a root-cause approach</h2>
+            <div class="eyebrow">Our Care Approach</div>
+            <h2>Personalized Homeopathy Care</h2>
         </div>
-
         <div class="steps-grid">
             <div class="step-box">
                 <span>01</span>
-                <h3>Detailed Evaluation</h3>
-                <p>Every person is assessed individually, including emotional patterns, triggers, habits, and physical health history.</p>
+                <h3>Your Problem</h3>
+                <p>We understand your symptoms, emotions, habits, lifestyle & overall health.</p>
             </div>
 
             <div class="step-box">
                 <span>02</span>
-                <h3>Personalized Remedy</h3>
-                <p>Homeopathic remedies are selected based on the patient’s unique symptom profile rather than a one-size-fits-all treatment.</p>
+                <h3>Personalized Treatment</h3>
+                <p>We provide a personalized homeopathy treatment plan based on your individual symptoms & health needs.</p>
             </div>
 
             <div class="step-box">
                 <span>03</span>
-                <h3>Supportive Recovery</h3>
-                <p>The goal is to improve emotional stability, restore balance, and reduce the intensity of recurring mental health symptoms.</p>
+                <h3>Regular Follow-Up</h3>
+                <p>Regular follow-ups help us understand your progress & provide ongoing support for your health.</p>
             </div>
         </div>
     </div>
@@ -161,28 +148,27 @@ require 'header.php';
     <div class="container">
         <div class="section-head">
             <div class="eyebrow">FAQ</div>
-            <h2>Frequently asked questions</h2>
+            <h2>Frequently Asked Questions</h2>
         </div>
-
         <div class="faq-list">
             <details open>
-                <summary>What are mental diseases?</summary>
-                <p>Mental diseases are disorders that affect a person’s thinking, emotions, behavior, and overall functioning. They can range from anxiety and depression to more severe psychiatric conditions.</p>
+                <summary>What are mental health problems?</summary>
+                <p>Mental health problems can affect a person's thoughts, emotions, behaviour & daily life. They can include stress, anxiety, depression, mood problems & other conditions.</p>
             </details>
 
             <details>
-                <summary>How can homeopathy help with mental health issues?</summary>
-                <p>Homeopathy looks at the whole person, including emotional, mental, and physical symptoms. It aims to strengthen the body’s natural balance and address the underlying cause.</p>
+                <summary>Can homeopathy help with mental health problems?</summary>
+                <p>Homeopathy treatment is personalized based on your symptoms, emotional health, lifestyle & overall health. It should be taken under the guidance of a qualified doctor.</p>
             </details>
 
             <details>
-                <summary>Are homeopathic treatments safe?</summary>
-                <p>Homeopathic medicines are generally considered gentle and individualized. They are selected carefully and should be taken under professional guidance.</p>
+                <summary>When should I consult a doctor?</summary>
+                <p>You should consult a qualified doctor if stress, anxiety, sadness, fear, mood changes or sleep problems are regularly affecting your daily life.</p>
             </details>
 
             <details>
                 <summary>How long does treatment take?</summary>
-                <p>Response time varies depending on the condition, its severity, and the individual. Consistent follow-up and personalized care are important for better outcomes.</p>
+                <p>The time required can be different for every person & depends on the type of problem, its severity & individual health condition. Regular follow-ups are important.</p>
             </details>
         </div>
     </div>
@@ -192,9 +178,9 @@ require 'header.php';
     <div class="container">
         <div class="cta-box">
             <div>
-                <div class="eyebrow">Take the first step</div>
-                <h2>Ready to take control of your mental well-being?</h2>
-                <p>If stress, anxiety, mood swings, or emotional imbalance are affecting your life, support is available through a careful and compassionate homeopathic consultation.</p>
+                <div class="eyebrow">Take the First Step</div>
+                <h2>Ready to Talk About Your Mental Health?</h2>
+                <p>If stress, anxiety, mood changes or emotional problems are affecting your daily life, book a consultation with our doctor for personalized homeopathy care.</p>
             </div>
             <div class="actions">
                 <a class="btn" href="appointment.php">Book an Appointment</a>

@@ -145,6 +145,38 @@ a {
     margin-bottom: 15px
 }
 
+.font-size-options {
+    display: inline-flex;
+    gap: 4px;
+    margin-left: auto
+}
+
+.font-size-button {
+    min-width: 34px;
+    height: 32px;
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+    cursor: pointer;
+    line-height: 1;
+    font-size: 0
+}
+
+.font-size-button::after {
+    content: attr(aria-label);
+    font-size: 12px;
+    white-space: nowrap
+}
+
+.font-size-button.active,
+.font-size-button:hover {
+    border-color: var(--p);
+    background: var(--p);
+    color: #fff
+}
+
 .btn {
     display: inline-block;
     border: 0;

@@ -1,0 +1,388 @@
+[
+    {
+        "id": "finance-20260907145334-9e2550",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:53:34",
+        "deleted_at": "2026-09-07 14:53:34"
+    },
+    {
+        "id": "finance-20260907145334-8bddfb",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:53:34",
+        "deleted_at": "2026-09-07 14:53:34"
+    },
+    {
+        "id": "finance-20260907145619-3bc508",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:56:19",
+        "deleted_at": "2026-09-07 14:56:19"
+    },
+    {
+        "id": "finance-20260907145619-812a3b",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                },
+                {
+                    "id": "5e2d23b3bf3bf598",
+                    "type": "income",
+                    "title": "Augest Rent",
+                    "category": "Rent",
+                    "amount": 8000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 14:56:19",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:56:19",
+        "deleted_at": "2026-09-07 14:56:19"
+    },
+    {
+        "id": "finance-20260907145631-a7064e",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                },
+                {
+                    "id": "5e2d23b3bf3bf598",
+                    "type": "income",
+                    "title": "Augest Rent",
+                    "category": "Rent",
+                    "amount": 8000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 14:56:19",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:56:31",
+        "deleted_at": "2026-09-07 14:56:31"
+    },
+    {
+        "id": "finance-20260907145631-4fbe04",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:56:31",
+        "deleted_at": "2026-09-07 14:56:31"
+    },
+    {
+        "id": "finance-20260907145945-c24a2e",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:59:45",
+        "deleted_at": "2026-09-07 14:59:45"
+    },
+    {
+        "id": "finance-20260907145945-51a32d",
+        "snapshot": {
+            "categories": [
+                "Rent",
+                "Salary",
+                "Utilities",
+                "Marketing",
+                "Supplies",
+                "Other",
+                "Consultation"
+            ],
+            "entries": [
+                {
+                    "id": "5f72c941272fd7fc",
+                    "type": "income",
+                    "title": "Appointment Income",
+                    "category": "Consultation",
+                    "amount": 1000,
+                    "method": "cash",
+                    "person": "Zeels Kachhadiya",
+                    "note": "Appointment APT-000001",
+                    "date": "2026-10-26",
+                    "created_at": "2026-09-07 11:02:51",
+                    "created_by": "admin",
+                    "source_appointment_id": "a1498ceecc703064"
+                },
+                {
+                    "id": "6547fe4a607e0206",
+                    "type": "expense",
+                    "title": "Shruvi",
+                    "category": "Salary",
+                    "amount": 500,
+                    "method": "cash",
+                    "person": "",
+                    "note": "",
+                    "date": "2026-09-07",
+                    "created_at": "2026-09-07 11:03:35",
+                    "created_by": "admin"
+                }
+            ]
+        },
+        "created_at": "2026-09-07 14:59:45",
+        "deleted_at": "2026-09-07 14:59:45"
+    }
+]

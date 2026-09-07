@@ -1,39 +1,35 @@
 <?php require 'includes.php';
 $s = settings();
-$page_title = 'Neurological Disorders | ' . $s['clinic_name'];
+$page_title = 'Neurological Problems | ' . $s['clinic_name'];
 require 'header.php';
+
 $conditions = [
-    ['Migraine', 'Personalized support for recurring headaches, light sensitivity, nausea, and migraine triggers.'],
-    ['Headache', 'Care for recurring tension, sinus-related, or other common headache complaints.'],
-    ['Vertigo', 'Guidance for dizziness, spinning sensations, imbalance, and related discomfort.'],
-    ['Neuralgia', 'Support for sharp, burning, or electric-shock-like nerve pain.'],
-    ['Neuropathy', 'Individualized care for tingling, numbness, burning, or weakness related to nerve concerns.'],
-    ['Tremors', 'Assessment and support for involuntary shaking or trembling affecting daily activities.'],
-    ['Sciatica', 'Care for pain, tingling, or numbness travelling from the lower back into the leg.'],
-    ['Sleep-related Neurological Complaints', 'Support for sleep disturbance, restless sleep, and neurological symptoms affecting rest.']
+    ['Migraine', 'Personalized homeopathy care for recurring headaches, light sensitivity, nausea & migraine problems.'],
+    ['Headache', 'Support for recurring headaches, tension headaches & other common headache problems.'],
+    ['Vertigo', 'Care for dizziness, spinning sensations, imbalance & related discomfort.'],
+    ['Neuralgia', 'Support for sharp, burning or electric-shock-like nerve pain.'],
+    ['Neuropathy', 'Personalized care for tingling, numbness, burning or weakness related to nerve problems.'],
+    ['Tremors', 'Support for involuntary shaking or trembling that affects daily activities.'],
+    ['Sciatica', 'Care for pain, tingling or numbness that travels from the lower back to the leg.'],
+    ['Sleep-Related Problems', 'Support for disturbed sleep, restless sleep & nerve-related problems affecting rest.']
 ];
 ?>
 
 <section class="treatment-hero">
     <div class="container treatment-hero-grid">
         <div>
-            <div class="eyebrow">Homeopathic Neurological Care</div>
-            <h1>Neurological Disorders</h1>
-            <p>Nervous system concerns can affect movement, comfort, sleep, focus, and daily life. Our personalized approach considers your symptoms, triggers, medical history, lifestyle, and overall health.</p>
+            <div class="eyebrow">Homeopathy for Neurological Problems</div>
+            <h1>Neurological Problems</h1>
+            <p>Nerve & neurological problems can affect movement, comfort, sleep, focus & daily life. Our personalized homeopathy treatment understands your symptoms, possible triggers, health history, lifestyle & overall health.</p>
+
             <div class="actions">
                 <a class="btn" href="appointment.php">Book Consultation</a>
                 <a class="btn btn-outline" href="contact.php">Consult Doctor</a>
             </div>
-            <div class="treatment-badges">
-                <?php foreach ($conditions as $condition): ?><span><?= e($condition[0]) ?></span><?php endforeach; ?>
-            </div>
         </div>
+
         <div class="treatment-visual">
-            <img src="assets/images/treatments/neurological-disorders.png"alt="Neurological care">
-            <div class="mini-card">
-                <strong>Personalized Neurological Care</strong>
-                <span>Care based on your symptoms, neurological history, daily routine, and individual health needs.</span>
-            </div>
+            <img src="assets/images/treatments/neurological-disorders.png" alt="Homeopathy treatment for neurological & nerve problems">
         </div>
     </div>
 </section>
@@ -42,9 +38,10 @@ $conditions = [
     <div class="container">
         <div class="section-head">
             <div class="eyebrow">Neurological Health Care</div>
-            <h2>Conditions we support</h2>
-            <p>Individualized care for common nerve, pain, balance, movement, and sleep-related concerns.</p>
+            <h2>Problems We Help With</h2>
+            <p>Personalized homeopathy care for common nerve, pain, balance, movement & sleep-related problems.</p>
         </div>
+
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
@@ -60,29 +57,33 @@ $conditions = [
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <div class="eyebrow">Symptoms &amp; Triggers</div>
-            <h2>Signs to discuss with a doctor</h2>
+            <div class="eyebrow">Symptoms & Possible Causes</div>
+            <h2>Common Signs & Possible Reasons</h2>
         </div>
+
         <div class="two-col-grid">
             <div class="info-panel">
-                <h2>Common symptoms include:</h2>
+                <h2>Common problems include:</h2>
+
                 <ul class="check-list">
-                    <li>Recurring headache, migraine, or facial pain</li>
-                    <li>Dizziness, spinning sensations, or imbalance</li>
-                    <li>Numbness, tingling, burning, or nerve pain</li>
-                    <li>Involuntary shaking, stiffness, or weakness</li>
-                    <li>Lower back pain radiating into the leg</li>
-                    <li>Sleep disturbance, fatigue, or difficulty concentrating</li>
+                    <li>Recurring headaches, migraine or facial pain</li>
+                    <li>Dizziness, spinning sensations or loss of balance</li>
+                    <li>Numbness, tingling, burning or nerve pain</li>
+                    <li>Involuntary shaking, stiffness or weakness</li>
+                    <li>Lower back pain that travels to the leg</li>
+                    <li>Sleep problems, tiredness or difficulty focusing</li>
                 </ul>
             </div>
+
             <div class="info-panel">
-                <h2>Possible contributing factors:</h2>
+                <h2>Possible reasons for these problems:</h2>
+
                 <ul class="check-list">
-                    <li>Stress, poor sleep, or irregular routine</li>
-                    <li>Posture, muscle tension, or physical strain</li>
-                    <li>Injury, illness, or nerve compression</li>
-                    <li>Medical, metabolic, or nutritional conditions</li>
-                    <li>Family history and individual health factors</li>
+                    <li>Stress, poor sleep or an irregular routine</li>
+                    <li>Poor posture, muscle tension or physical strain</li>
+                    <li>Injury, illness or pressure on a nerve</li>
+                    <li>Other health, nutritional or body-related problems</li>
+                    <li>Family history or individual health factors</li>
                 </ul>
             </div>
         </div>
@@ -93,12 +94,27 @@ $conditions = [
     <div class="container">
         <div class="section-head">
             <div class="eyebrow">Our Care Approach</div>
-            <h2>Thoughtful care for nervous system wellness</h2>
+            <h2>Personalized Care for Nerve Problems</h2>
         </div>
+
         <div class="steps-grid">
-            <div class="step-box"><span>01</span><h3>Detailed Evaluation</h3><p>We understand your symptoms, pattern, triggers, medical history, medicines, and daily routine.</p></div>
-            <div class="step-box"><span>02</span><h3>Personalized Plan</h3><p>Your care plan is selected according to your individual symptoms and overall health needs.</p></div>
-            <div class="step-box"><span>03</span><h3>Follow-up Support</h3><p>Regular follow-up helps monitor changes and support steady progress in daily comfort and wellbeing.</p></div>
+            <div class="step-box">
+                <span>01</span>
+                <h3>Your Problem</h3>
+                <p>We understand your symptoms, possible triggers, health history, medicines & daily routine.</p>
+            </div>
+
+            <div class="step-box">
+                <span>02</span>
+                <h3>Personalized Treatment</h3>
+                <p>We provide a personalized homeopathy treatment plan based on your symptoms & overall health.</p>
+            </div>
+
+            <div class="step-box">
+                <span>03</span>
+                <h3>Regular Follow-Up</h3>
+                <p>Regular follow-ups help us understand your progress & provide ongoing support for your health.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -106,9 +122,22 @@ $conditions = [
 <section class="section">
     <div class="container">
         <div class="faq-list">
-            <details open><summary>When should I consult for neurological symptoms?</summary><p>Consult a doctor for recurring, worsening, or unexplained headaches, dizziness, numbness, weakness, tremors, nerve pain, or sleep-related symptoms.</p></details>
-            <details><summary>When do neurological symptoms need urgent care?</summary><p>Seek urgent medical attention for sudden weakness or numbness, difficulty speaking, fainting, seizures, severe sudden headache, loss of balance, or new confusion.</p></details>
-            <details><summary>Can lifestyle affect neurological wellness?</summary><p>Sleep, stress, posture, hydration, movement, nutrition, and daily routine can influence symptoms. Persistent or severe concerns should be evaluated by a qualified doctor.</p></details>
+
+            <details open>
+                <summary>When should I see a doctor for neurological problems?</summary>
+                <p>You should consult a doctor if headaches, dizziness, numbness, weakness, shaking, nerve pain or sleep problems happen often, become worse or affect your daily life.</p>
+            </details>
+
+            <details>
+                <summary>When do neurological symptoms need urgent medical care?</summary>
+                <p>Seek urgent medical help for sudden weakness or numbness, difficulty speaking, fainting, seizures, a sudden severe headache, loss of balance or sudden confusion.</p>
+            </details>
+
+            <details>
+                <summary>Can lifestyle affect nerve & neurological health?</summary>
+                <p>Yes. Sleep, stress, posture, water intake, physical activity, food habits & daily routine can affect some symptoms. Persistent or severe problems should be checked by a qualified doctor.</p>
+            </details>
+
         </div>
     </div>
 </section>
@@ -117,10 +146,11 @@ $conditions = [
     <div class="container">
         <div class="cta-box">
             <div>
-                <div class="eyebrow">Take the first step</div>
-                <h2>Ready to discuss your symptoms?</h2>
-                <p>Book a consultation for headache, nerve, balance, movement, sciatica, or sleep-related concerns.</p>
+                <div class="eyebrow">Take the First Step</div>
+                <h2>Ready to Talk About Your Symptoms?</h2>
+                <p>If headaches, nerve pain, dizziness, balance problems, movement problems or sleep issues are affecting your daily life, book a consultation for personalized homeopathy care.</p>
             </div>
+
             <a class="btn" href="appointment.php">Book an Appointment</a>
         </div>
     </div>

@@ -1,6 +1,7 @@
 <?php require 'includes.php';
 $s = settings();
 $db = db_load();
+$homeDoctors = array_values(array_filter($db['admins'] ?? [], fn($admin) => !empty($admin['is_doctor']) && !empty($admin['show_on_home'])));
 $beforeAfterPairs = [
     [
         ['image' => 'uploads/20260822180332_d567ca55.jpg'],
@@ -155,6 +156,7 @@ function service_icon(string $name): string
     </div>
 </section>
 
+<?php if ($homeDoctors): ?><section class="section"><div class="container"><div class="row text-center"><div class="eyebrow">Our Doctors</div><h2 class="font-heading font-bold">Meet Our Homeopathic Doctors</h2></div><div class="doctor-card-grid"><?php foreach ($homeDoctors as $doctor): ?><article class="doctor-card"><div class="doctor-card-photo"><?php if (!empty($doctor['photo'])): ?><img src="<?= e($doctor['photo']) ?>" alt="<?= e($doctor['name'] ?? 'Doctor') ?>"><?php else: ?><span><?= e(strtoupper(substr($doctor['name'] ?? 'D', 0, 1))) ?></span><?php endif; ?></div><h3><?= e($doctor['name'] ?? '') ?></h3><p class="doctor-card-designation"><?= e($doctor['designation'] ?? 'Homeopathic Doctor') ?></p><p><?= e($doctor['degree'] ?? '') ?></p></article><?php endforeach; ?></div></div></section><?php endif; ?>
 <section class="section alt services-section">
     <div class="container">
         <div class="row text-center">

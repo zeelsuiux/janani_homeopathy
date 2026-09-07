@@ -1,5 +1,7 @@
 <?php require 'includes.php';
 $s = settings();
+$db = db_load();
+$publicDoctors = array_values(array_filter($db['admins'] ?? [], fn($admin) => !empty($admin['is_doctor'])));
 $page_title = 'About Us | ' . $s['clinic_name'];
 require 'header.php'; ?><section class="page-head">
     <div class="container">
@@ -65,4 +67,5 @@ require 'header.php'; ?><section class="page-head">
         </div>
     </div>
 </section>
+<?php if ($publicDoctors): ?><section class="section alt"><div class="container"><div class="row text-center"><div class="eyebrow">Our Doctors</div><h2 class="font-heading font-bold">Meet Our Homeopathic Doctors</h2></div><div class="doctor-card-grid"><?php foreach ($publicDoctors as $doctor): ?><article class="doctor-card"><div class="doctor-card-photo"><?php if (!empty($doctor['photo'])): ?><img src="<?= e($doctor['photo']) ?>" alt="<?= e($doctor['name'] ?? 'Doctor') ?>"><?php else: ?><span><?= e(strtoupper(substr($doctor['name'] ?? 'D', 0, 1))) ?></span><?php endif; ?></div><h3><?= e($doctor['name'] ?? '') ?></h3><p class="doctor-card-designation"><?= e($doctor['designation'] ?? 'Homeopathic Doctor') ?></p><p><?= e($doctor['degree'] ?? '') ?></p></article><?php endforeach; ?></div></div></section><?php endif; ?>
 <?php require 'footer.php'; ?>

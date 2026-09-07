@@ -1,0 +1,126 @@
+.admin-date-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border: 1px solid #d3e8df;
+    border-radius: 14px;
+    background: linear-gradient(110deg, #fff 0%, #f0faf6 100%);
+    box-shadow: 0 8px 22px rgba(3, 91, 64, .08);
+    font-family: 'Manrope', sans-serif
+}
+
+.admin-date-filter > label:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #035b40;
+    font-size: 13px;
+    font-weight: 800
+}
+
+.admin-date-filter select,
+.admin-date-filter input {
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid #c5dfd4;
+    border-radius: 10px;
+    background: #fff;
+    color: #17332b;
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s, transform .2s
+}
+
+.admin-date-filter select {
+    min-width: 154px;
+    padding-right: 38px;
+    font-weight: 800;
+    cursor: pointer;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #035b40 50%), linear-gradient(135deg, #035b40 50%, transparent 50%), linear-gradient(to right, #dff3eb, #dff3eb);
+    background-position: calc(100% - 17px) 16px, calc(100% - 11px) 16px, calc(100% - 31px) 0;
+    background-size: 6px 6px, 6px 6px, 1px 100%;
+    background-repeat: no-repeat
+}
+
+.admin-date-filter select:hover,
+.admin-date-filter input:hover {
+    border-color: #04845f;
+    transform: translateY(-1px)
+}
+
+.admin-date-filter select:focus,
+.admin-date-filter input:focus {
+    border-color: #04845f;
+    box-shadow: 0 0 0 4px rgba(4, 132, 95, .13)
+}
+
+.admin-date-filter select option {
+    padding: 10px;
+    background: #fff;
+    color: #17332b;
+    font-family: 'Manrope', sans-serif
+}
+
+.admin-date-filter select option:checked {
+    background: #dff3eb;
+    color: #035b40
+}
+
+.admin-date-filter .custom-date-field {
+    display: none;
+    align-items: center;
+    gap: 7px;
+    color: #527067;
+    font-size: 12px;
+    font-weight: 800
+}
+
+.admin-date-filter .date-clear {
+    min-height: 38px;
+    padding: 8px 14px;
+    border: 1px solid #b9d9cc;
+    border-radius: 10px;
+    background: #fff;
+    color: #035b40;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background .2s, color .2s, transform .2s
+}
+
+.admin-date-filter .date-clear:hover {
+    background: #035b40;
+    color: #fff;
+    transform: translateY(-1px)
+}
+
+.admin-date-filter:before {
+    content: 'Date range';
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #dff3eb;
+    color: #527067;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase
+}
+
+@media(max-width:600px) {
+    .admin-date-filter { align-items: stretch }
+    .admin-date-filter:before { width: 100%; justify-content: center }
+    .admin-date-filter > label:first-child { width: 100%; justify-content: space-between }
+    .admin-date-filter select { flex: 1 }
+    .admin-date-filter .custom-date-field { width: 100% }
+    .admin-date-filter .custom-date-field input { flex: 1 }
+    .admin-date-filter .date-clear { width: 100% }
+}
