@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/includes/functions.php';
 header('Content-Type: application/xml; charset=utf-8');
-$urls=[site_url('index.php'),site_url('about.php'),site_url('services.php'),site_url('blogs.php'),site_url('contact.php')];
+$urls=[site_url('index.php'),site_url('about.php'),site_url('services.php'),site_url('blogs.php'),site_url('contact.php'),site_url('before-after.php'),site_url('testimonial-videos.php')];
 foreach(db()['blogs'] as $b) if(($b['status']??'')==='published') $urls[]=site_url('blog-detail.php?slug='.urlencode($b['slug']));
 foreach(['homeopathy-treatment','child-care','women-health','skin-problems','hair-problems','allergy-treatment','lifestyle-disorders'] as $s)$urls[]=site_url('services/'.$s.'.php');
 echo '<?xml version="1.0" encoding="UTF-8"?>'."\n";

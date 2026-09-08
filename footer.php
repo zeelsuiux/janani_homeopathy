@@ -10,7 +10,7 @@ $whatsapp_number = preg_replace('/\D+/', '', explode('/', $s['phone'])[0]); ?>
         </div>
         <div class="footer-links">
             <h3>Quick Links</h3>
-            <a href="index.php">Home</a><a href="about.php">About Us</a><a href="treatments.php">Homeopathy Treatments</a><a href="reviews.php">Reviews</a><a href="gallery.php">Gallery</a><a href="contact.php#faq">FAQ's</a><a href="blog.php">Blog</a><a href="contact.php">Contact Us</a>
+            <a href="index.php">Home</a><a href="about.php">About Us</a><a href="treatments.php">Homeopathy Treatments</a><a href="testimonial-videos.php">Testimonial Videos</a><a href="gallery.php">Gallery</a><a href="contact.php#faq">FAQ's</a><a href="blog.php">Blog</a><a href="contact.php">Contact Us</a>
         </div>
         <div class="footer-links">
             <h3>Homeopathy Treatments</h3>
@@ -37,9 +37,11 @@ $whatsapp_number = preg_replace('/\D+/', '', explode('/', $s['phone'])[0]); ?>
         <span aria-hidden="true">&#128197;</span> Book Appointment
     </a>
 </div>
+<div class="video-viewer" id="videoViewer" hidden><div class="video-viewer-backdrop" data-video-close></div><div class="video-viewer-dialog" role="dialog" aria-modal="true" aria-labelledby="videoViewerTitle"><button class="video-viewer-close" type="button" data-video-close aria-label="Close video">&times;</button><video id="videoViewerPlayer" controls playsinline></video><h2 id="videoViewerTitle"></h2></div></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/file-preview.js"></script>
 <script>
     (function() {
         if (!document.querySelector('.admin-main')) return;

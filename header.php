@@ -56,7 +56,10 @@ $treatment_pages = [
                     </div>
                 </div>
                     <a class="<?= $current_page === 'gallery.php' ? 'active' : '' ?>" href="gallery.php">Gallery</a>
-                    <a class="<?= $current_page === 'result.php' ? 'active' : '' ?>" href="result.php">Results</a>
+                    <div class="menu-dropdown">
+                        <a class="<?= in_array($current_page, ['before-after.php', 'testimonial-videos.php'], true) ? 'active' : '' ?>" href="before-after.php">Results <span class="dropdown-arrow">▾</span></a>
+                        <div class="submenu"><a href="before-after.php">Before &amp; After</a><a href="testimonial-videos.php">Testimonial Videos</a></div>
+                    </div>
                     <a class="<?= in_array($current_page, ['blog.php', 'blog-detail.php'], true) ? 'active' : '' ?>" href="blog.php">Blog</a>
                     <a class="<?= $current_page === 'contact.php' ? 'active' : '' ?>" href="contact.php">Contact</a>
                     <a class="btn" href="appointment.php">Book Appointment</a>

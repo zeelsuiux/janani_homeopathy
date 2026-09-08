@@ -2,20 +2,9 @@
 $s = settings();
 $db = db_load();
 $homeDoctors = array_values(array_filter($db['admins'] ?? [], fn($admin) => !empty($admin['is_doctor']) && !empty($admin['show_on_home'])));
-$beforeAfterPairs = [
-    [
-        ['image' => 'uploads/20260822180332_d567ca55.jpg'],
-        ['image' => 'uploads/20260822180625_ae6d9b39.png'],
-    ],
-    [
-        ['image' => 'uploads/20260822181206_a45bdef8.jpg'],
-        ['image' => 'uploads/20260822181206_265d09d0.png'],
-    ],
-    [
-        ['image' => 'uploads/20260822181206_a45bdef8.jpg'],
-        ['image' => 'uploads/20260822181206_265d09d0.png'],
-    ]
-];
+$treatments = treatment_options();
+$beforeAfterByTreatment = latest_by_treatment($db['before_after'] ?? []);
+$testimonialVideosByTreatment = latest_by_treatment($db['testimonial_videos'] ?? []);
 $page_title = $s['clinic_name'];
 require 'header.php'; ?>
 
@@ -337,30 +326,30 @@ function service_icon(string $name): string
     </div>
 </section>
 
-<?php if ($beforeAfterPairs): ?>
+<?php if ($beforeAfterByTreatment): ?>
     <section class="section before-after-section" aria-labelledby="before-after-title">
         <div class="container">
-            <div class="mb-5 text-center">
-                <h1 class="font-bold heading">What Our Patients Say</h1>
-                <p>Real Stories of Recovery from Our Patients at Janani Homeopathy Clinic, Surat</p>
-            </div>
+            <div class="section-head result-section-head"><div><div class="eyebrow">Patient Results</div><h2>Before &amp; After</h2></div><a class="btn btn-outline" href="before-after.php">View All</a></div>
             <div class="before-after-grid">
-                <?php foreach ($beforeAfterPairs as $pairIndex => $pair): if (count($pair) < 2) continue;
-                    $before = $pair[0];
-                    $after = $pair[1]; ?>
+                <?php foreach ($beforeAfterByTreatment as $treatment => $item): ?>
                     <article class="before-after-card col-12 col-md-6 col-lg-4">
                         <div class="before-after-compare" data-before-after>
-                            <div class="before-after-image"><img src="<?= e($after['image']) ?>" alt="After result"></div>
-                            <div class="before-after-image before-after-before"><img src="<?= e($before['image']) ?>" alt="Before result"></div>
+                            <div class="before-after-image"><img src="<?= e($item['after_image']) ?>" alt="<?= e($item['title']) ?> after"></div>
+                            <div class="before-after-image before-after-before"><img src="<?= e($item['before_image']) ?>" alt="<?= e($item['title']) ?> before"></div>
                             <span class="before-after-label before-label">Before</span><span class="before-after-label after-label">After</span>
                             <span class="before-after-handle" aria-hidden="true">&#10094; &#10095;</span>
                             <input class="before-after-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after images">
                         </div>
+                        <div class="result-media-body"><small><?= e($treatments[$treatment] ?? $treatment) ?></small><h3><?= e($item['title']) ?></h3></div>
                     </article>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
+<?php endif; ?>
+
+<?php if ($testimonialVideosByTreatment): ?>
+<section class="section testimonial-reels-section"><div class="container"><div class="section-head result-section-head"><div><div class="eyebrow">Patient Stories</div><h2>Testimonial Reels</h2></div><a class="btn btn-outline" href="testimonial-videos.php">View All</a></div><div class="testimonial-reel-slider" data-reel-slider><div class="testimonial-reel-track"><?php foreach ($testimonialVideosByTreatment as $treatment => $item): ?><article class="testimonial-video-card"><button class="testimonial-video-trigger" type="button" data-video-src="<?= e($item['video']) ?>" data-video-title="<?= e($item['title']) ?>"><video src="<?= e($item['video']) ?>" muted loop autoplay playsinline preload="metadata"></video><span class="testimonial-play" aria-hidden="true">&#9654;</span></button><div class="result-media-body"><small><?= e($treatments[$treatment] ?? $treatment) ?></small><h3><?= e($item['title']) ?></h3></div></article><?php endforeach; ?></div></div></div></section>
 <?php endif; ?>
 
 <section class="section alt">

@@ -19,7 +19,7 @@
         "created_at": "2026-08-22 17:27:59",
         "status": "Old Patient",
         "permanent_first_seen_at": "2026-09-07 15:03:43",
-        "permanent_updated_at": "2026-09-07 15:29:32"
+        "permanent_updated_at": "2026-09-08 10:11:59"
     },
     {
         "id": "08fbfd438a3a1dc7",
@@ -41,7 +41,7 @@
         "created_at": "2026-09-05 07:39:08",
         "status": "Old Patient",
         "permanent_first_seen_at": "2026-09-07 15:03:43",
-        "permanent_updated_at": "2026-09-07 15:29:32"
+        "permanent_updated_at": "2026-09-08 10:11:59"
     },
     {
         "id": "849477e14da4a6a1",
@@ -63,7 +63,7 @@
         "created_at": "2026-09-07 10:10:39",
         "status": "Converted",
         "permanent_first_seen_at": "2026-09-07 15:03:43",
-        "permanent_updated_at": "2026-09-07 15:29:32"
+        "permanent_updated_at": "2026-09-08 10:11:59"
     },
     {
         "id": "f821c6db255083ce",
@@ -85,6 +85,6 @@
         "created_at": "2026-09-07 10:20:18",
         "status": "Old Patient",
         "permanent_first_seen_at": "2026-09-07 15:03:43",
-        "permanent_updated_at": "2026-09-07 15:29:32"
+        "permanent_updated_at": "2026-09-08 10:11:59"
     }
 ]

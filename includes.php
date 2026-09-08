@@ -106,7 +106,7 @@ function archive_database_snapshot(array $before, array $after): void
 }
 function db_collections(): array
 {
-    return ['settings' => 'settings.json', 'admins' => 'admins.json', 'activities' => 'activities.json', 'patients' => 'patients.json', 'appointments' => 'appointments.json', 'inquiries' => 'inquiries.json', 'blogs' => 'blogs.json', 'gallery' => 'gallery.json', 'results' => 'results.json', 'finance' => 'finance.json'];
+    return ['settings' => 'settings.json', 'admins' => 'admins.json', 'activities' => 'activities.json', 'patients' => 'patients.json', 'appointments' => 'appointments.json', 'inquiries' => 'inquiries.json', 'blogs' => 'blogs.json', 'gallery' => 'gallery.json', 'results' => 'results.json', 'before_after' => 'before_after.json', 'testimonial_videos' => 'testimonial_videos.json', 'finance' => 'finance.json'];
 }
 function record_admin_activity(array $before, array &$data): void
 {
@@ -122,7 +122,7 @@ function record_admin_activity(array $before, array &$data): void
 
 function detailed_activity_actions(array $before, array $after): array
 {
-    $labels = ['patients' => 'patient', 'appointments' => 'appointment', 'inquiries' => 'inquiry', 'blogs' => 'blog', 'gallery' => 'gallery image', 'results' => 'result', 'admins' => 'subadmin'];
+    $labels = ['patients' => 'patient', 'appointments' => 'appointment', 'inquiries' => 'inquiry', 'blogs' => 'blog', 'gallery' => 'gallery image', 'results' => 'result', 'before_after' => 'before & after result', 'testimonial_videos' => 'testimonial video', 'admins' => 'subadmin'];
     $actions = [];
     foreach ($labels as $collection => $label) {
         $old = []; $new = [];
@@ -200,7 +200,7 @@ function is_list_array(array $value): bool
 }
 function default_db(): array
 {
-    return ['settings' => [], 'admins' => [], 'activities' => [], 'patients' => [], 'appointments' => [], 'inquiries' => [], 'blogs' => [], 'gallery' => [], 'results' => [], 'finance' => ['categories' => [], 'entries' => []]];
+    return ['settings' => [], 'admins' => [], 'activities' => [], 'patients' => [], 'appointments' => [], 'inquiries' => [], 'blogs' => [], 'gallery' => [], 'results' => [], 'before_after' => [], 'testimonial_videos' => [], 'finance' => ['categories' => [], 'entries' => []]];
 }
 function next_number(array $items, string $prefix): string
 {
@@ -243,6 +243,45 @@ function upload_image(string $field, string $dir = 'uploads'): string
     if (!is_dir($root)) mkdir($root, 0775, true);
     move_uploaded_file($_FILES[$field]['tmp_name'], $root . '/' . $name);
     return $dir . '/' . $name;
+}
+function upload_video(string $field, string $dir = 'uploads'): string
+{
+    if (empty($_FILES[$field]['name']) || ($_FILES[$field]['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) return '';
+    $file = $_FILES[$field];
+    if (($file['size'] ?? 0) > 40 * 1024 * 1024) return '';
+    $mime = (new finfo(FILEINFO_MIME_TYPE))->file($file['tmp_name']);
+    $allowed = ['video/mp4' => 'mp4', 'video/webm' => 'webm', 'video/ogg' => 'ogv', 'application/ogg' => 'ogv'];
+    if (!isset($allowed[$mime])) return '';
+    $name = date('YmdHis') . '_' . bin2hex(random_bytes(5)) . '.' . $allowed[$mime];
+    $root = __DIR__ . '/' . $dir;
+    if (!is_dir($root)) mkdir($root, 0775, true);
+    if (!move_uploaded_file($file['tmp_name'], $root . '/' . $name)) return '';
+    return $dir . '/' . $name;
+}
+function treatment_options(): array
+{
+    return [
+        'mental-diseases' => 'Mental Diseases',
+        'gastric-diseases' => 'Gastric Diseases',
+        'skin-diseases' => 'Skin Diseases',
+        'gynaecological-problems' => 'Gynaecological Problems',
+        'neurological-disorders' => 'Neurological Disorders',
+        'autoimmune-disorders' => 'Autoimmune Disorders',
+        'bone-joint-diseases' => 'Bone & Joint Diseases',
+        'respiratory-problems' => 'Respiratory Problems',
+        'childrens-problems' => "Children's Problems",
+        'lifestyle-disorders' => 'Lifestyle Disorders',
+    ];
+}
+function latest_by_treatment(array $items): array
+{
+    $latest = [];
+    foreach ($items as $item) {
+        $treatment = (string)($item['treatment'] ?? '');
+        if ($treatment === '') continue;
+        if (!isset($latest[$treatment]) || strcmp((string)($item['created_at'] ?? ''), (string)($latest[$treatment]['created_at'] ?? '')) > 0) $latest[$treatment] = $item;
+    }
+    return $latest;
 }
 function settings(): array
 {
