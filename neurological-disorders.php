@@ -4,14 +4,14 @@ $page_title = 'Neurological Problems | ' . $s['clinic_name'];
 require 'header.php';
 
 $conditions = [
-    ['Migraine', 'Personalized homeopathy care for recurring headaches, light sensitivity, nausea & migraine problems.'],
-    ['Headache', 'Support for recurring headaches, tension headaches & other common headache problems.'],
-    ['Vertigo', 'Care for dizziness, spinning sensations, imbalance & related discomfort.'],
-    ['Neuralgia', 'Support for sharp, burning or electric-shock-like nerve pain.'],
-    ['Neuropathy', 'Personalized care for tingling, numbness, burning or weakness related to nerve problems.'],
-    ['Tremors', 'Support for involuntary shaking or trembling that affects daily activities.'],
-    ['Sciatica', 'Care for pain, tingling or numbness that travels from the lower back to the leg.'],
-    ['Sleep-Related Problems', 'Support for disturbed sleep, restless sleep & nerve-related problems affecting rest.']
+    ['Migraine', 'Personalized homeopathy care for recurring headaches, light sensitivity, nausea & migraine problems.','migraine'],
+    ['Headache', 'Support for recurring headaches, tension headaches & other common headache problems.','headache'],
+    ['Vertigo', 'Care for dizziness, spinning sensations, imbalance & related discomfort.','vertigo'],
+    ['Neuralgia', 'Support for sharp, burning or electric-shock-like nerve pain.','neuralgia'],
+    ['Neuropathy', 'Personalized care for tingling, numbness, burning or weakness related to nerve problems.','neuropathy'],
+    ['Tremors', 'Support for involuntary shaking or trembling that affects daily activities.','tremors'],
+    ['Sciatica', 'Care for pain, tingling or numbness that travels from the lower back to the leg.','sciatica'],
+    ['Sleep-Related Problems', 'Support for disturbed sleep, restless sleep & nerve-related problems affecting rest.','sleep-related-problems']
 ];
 ?>
 
@@ -45,7 +45,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'neurological') ?>.jpg" alt="<?= e($condition[0]) ?>"></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'neurological') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

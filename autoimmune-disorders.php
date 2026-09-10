@@ -4,14 +4,14 @@ $page_title = 'Autoimmune Problems | ' . $s['clinic_name'];
 require 'header.php';
 
 $conditions = [
-    ['Autoimmune Thyroid Problem', 'Personalized homeopathy care for thyroid-related symptoms, tiredness, energy changes & other thyroid problems.'],
-    ['Rheumatoid Arthritis', 'Support for joint pain, stiffness, swelling & recurring discomfort.'],
-    ['Psoriasis', 'Personalized care for dry, scaly, itchy or inflamed skin problems.'],
-    ['Vitiligo', 'Support for white patches & changes in skin colour.'],
-    ['SLE', 'Personalized supportive care based on your symptoms, overall health & individual needs.'],
-    ['Scleroderma', 'Support for skin changes, stiffness & other related health problems.'],
-    ['Dry Eyes & Dry Mouth Syndrome', 'Care for dryness, tiredness, discomfort & overall health concerns.'],
-    ['Other Autoimmune Problems', 'Personalized evaluation & supportive care for other immune-related health problems.']
+    ['Autoimmune Thyroid Problem', 'Personalized homeopathy care for thyroid-related symptoms, tiredness, energy changes & other thyroid problems.','autoimmune-thyroid-problem'],
+    ['Rheumatoid Arthritis', 'Support for joint pain, stiffness, swelling & recurring discomfort.','rheumatoid-arthritis'],
+    ['Psoriasis', 'Personalized care for dry, scaly, itchy or inflamed skin problems.','psoriasis'],
+    ['Vitiligo', 'Support for white patches & changes in skin colour.','vitiligo'],
+    ['SLE', 'Personalized supportive care based on your symptoms, overall health & individual needs.','sle'],
+    ['Scleroderma', 'Support for skin changes, stiffness & other related health problems.','scleroderma'],
+    ['Dry Eyes & Dry Mouth Syndrome', 'Care for dryness, tiredness, discomfort & overall health concerns.','dry-eyes-dry-mouth-syndrome'],
+    ['Other Autoimmune Problems', 'Personalized evaluation & supportive care for other immune-related health problems.','other-autoimmune-problems'],
 ];
 ?>
 
@@ -45,7 +45,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'autoimmune') ?>.jpg" alt="<?= e($condition[0]) ?>"></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'autoimmune') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e(html_entity_decode($condition[0], ENT_QUOTES, 'UTF-8')) ?></h3>
                     <p><?= e(html_entity_decode($condition[1], ENT_QUOTES, 'UTF-8')) ?></p>
                 </div>

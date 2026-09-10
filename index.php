@@ -145,7 +145,20 @@ function service_icon(string $name): string
     </div>
 </section>
 
-<?php if ($homeDoctors): ?><section class="section"><div class="container"><div class="row text-center"><div class="eyebrow">Our Doctors</div><h2 class="font-heading font-bold">Meet Our Homeopathic Doctors</h2></div><div class="doctor-card-grid"><?php foreach ($homeDoctors as $doctor): ?><article class="doctor-card"><div class="doctor-card-photo"><?php if (!empty($doctor['photo'])): ?><img src="<?= e($doctor['photo']) ?>" alt="<?= e($doctor['name'] ?? 'Doctor') ?>"><?php else: ?><span><?= e(strtoupper(substr($doctor['name'] ?? 'D', 0, 1))) ?></span><?php endif; ?></div><h3><?= e($doctor['name'] ?? '') ?></h3><p class="doctor-card-designation"><?= e($doctor['designation'] ?? 'Homeopathic Doctor') ?></p><p><?= e($doctor['degree'] ?? '') ?></p></article><?php endforeach; ?></div></div></section><?php endif; ?>
+<?php if ($homeDoctors): ?><section class="section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="eyebrow">Our Doctors</div>
+                <h2 class="font-heading font-bold">Meet Our Homeopathic Doctors</h2>
+            </div>
+            <div class="doctor-card-grid"><?php foreach ($homeDoctors as $doctor): ?><article class="doctor-card">
+                        <div class="doctor-card-photo"><?php if (!empty($doctor['photo'])): ?><img src="<?= e($doctor['photo']) ?>" alt="<?= e($doctor['name'] ?? 'Doctor') ?>"><?php else: ?><span><?= e(strtoupper(substr($doctor['name'] ?? 'D', 0, 1))) ?></span><?php endif; ?></div>
+                        <h3><?= e($doctor['name'] ?? '') ?></h3>
+                        <p class="doctor-card-designation"><?= e($doctor['designation'] ?? 'Homeopathic Doctor') ?></p>
+                        <p><?= e($doctor['degree'] ?? '') ?></p>
+                    </article><?php endforeach; ?></div>
+        </div>
+    </section><?php endif; ?>
 <section class="section alt services-section">
     <div class="container">
         <div class="row text-center">
@@ -268,7 +281,7 @@ function service_icon(string $name): string
                     <div class="holographic-card">
                         <img src="assets/images/treatments/respiratory-problems.png" alt="" class="w-100 " style="border-radius: 16px;">
                     </div>
-                    <h3>Respiratory Problems</h3>
+                    <h3>Respiratory Diseases</h3>
                     <p>
                         Breathing problems can affect your energy, sleep, work & daily comfort. We understand your symptoms, possible causes, medical history, lifestyle & overall health to provide treatment that suits your needs.
                     </p>
@@ -283,7 +296,7 @@ function service_icon(string $name): string
                     <div class="holographic-card">
                         <img src="assets/images/treatments/childrens-problems.png" alt="" class="w-100 " style="border-radius: 16px;">
                     </div>
-                    <h3>Children's Problems</h3>
+                    <h3>Children's Diseases</h3>
                     <p>
                         Children need special care for their age, growth, emotions & daily routine. We understand their symptoms, growth, habits, family history & overall health to provide treatment that suits their needs.
                     </p>
@@ -329,7 +342,12 @@ function service_icon(string $name): string
 <?php if ($beforeAfterByTreatment): ?>
     <section class="section before-after-section" aria-labelledby="before-after-title">
         <div class="container">
-            <div class="section-head result-section-head"><div><div class="eyebrow">Patient Results</div><h2>Before &amp; After</h2></div><a class="btn btn-outline" href="before-after.php">View All</a></div>
+            <div class="section-head result-section-head">
+                <div>
+                    <div class="eyebrow">Patient Results</div>
+                    <h2>Before &amp; After</h2>
+                </div><a class="btn btn-outline" href="before-after.php">View All</a>
+            </div>
             <div class="before-after-grid">
                 <?php foreach ($beforeAfterByTreatment as $treatment => $item): ?>
                     <article class="before-after-card col-12 col-md-6 col-lg-4">
@@ -340,7 +358,9 @@ function service_icon(string $name): string
                             <span class="before-after-handle" aria-hidden="true">&#10094; &#10095;</span>
                             <input class="before-after-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after images">
                         </div>
-                        <div class="result-media-body"><small><?= e($treatments[$treatment] ?? $treatment) ?></small><h3><?= e($item['title']) ?></h3></div>
+                        <div class="result-media-body"><small><?= e($treatments[$treatment] ?? $treatment) ?></small>
+                            <h3><?= e($item['title']) ?></h3>
+                        </div>
                     </article>
                 <?php endforeach; ?>
             </div>
@@ -349,7 +369,23 @@ function service_icon(string $name): string
 <?php endif; ?>
 
 <?php if ($testimonialVideosByTreatment): ?>
-<section class="section testimonial-reels-section"><div class="container"><div class="section-head result-section-head"><div><div class="eyebrow">Patient Stories</div><h2>Testimonial Reels</h2></div><a class="btn btn-outline" href="testimonial-videos.php">View All</a></div><div class="testimonial-reel-slider" data-reel-slider><div class="testimonial-reel-track"><?php foreach ($testimonialVideosByTreatment as $treatment => $item): ?><article class="testimonial-video-card"><button class="testimonial-video-trigger" type="button" data-video-src="<?= e($item['video']) ?>" data-video-title="<?= e($item['title']) ?>"><video src="<?= e($item['video']) ?>" muted loop autoplay playsinline preload="metadata"></video><span class="testimonial-play" aria-hidden="true">&#9654;</span></button><div class="result-media-body"><small><?= e($treatments[$treatment] ?? $treatment) ?></small><h3><?= e($item['title']) ?></h3></div></article><?php endforeach; ?></div></div></div></section>
+    <section class="section testimonial-reels-section">
+        <div class="container">
+            <div class="section-head result-section-head">
+                <div>
+                    <div class="eyebrow">Patient Stories</div>
+                    <h2>Testimonial Reels</h2>
+                </div><a class="btn btn-outline" href="testimonial-videos.php">View All</a>
+            </div>
+            <div class="testimonial-reel-slider" data-reel-slider>
+                <div class="testimonial-reel-track"><?php foreach ($testimonialVideosByTreatment as $treatment => $item): ?><article class="testimonial-video-card"><button class="testimonial-video-trigger" type="button" data-video-src="<?= e($item['video']) ?>" data-video-title="<?= e($item['title']) ?>"><video src="<?= e($item['video']) ?>" muted loop autoplay playsinline preload="metadata"></video><span class="testimonial-play" aria-hidden="true">&#9654;</span></button>
+                            <div class="result-media-body"><small><?= e($treatments[$treatment] ?? $treatment) ?></small>
+                                <h3><?= e($item['title']) ?></h3>
+                            </div>
+                        </article><?php endforeach; ?></div>
+            </div>
+        </div>
+    </section>
 <?php endif; ?>
 
 <section class="section alt">

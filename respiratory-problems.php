@@ -4,14 +4,14 @@ $page_title = 'Respiratory Problems | ' . $s['clinic_name'];
 require 'header.php';
 
 $conditions = [
-    ['Asthma', 'A breathing problem that can cause wheezing, chest tightness, breathlessness & repeated breathing problems.'],
-    ['Allergic Rhinitis', 'An allergy problem that can cause sneezing, a blocked or runny nose & itching.'],
-    ['Sinusitis', 'A sinus problem that can cause facial pressure, headache, blocked nose & discomfort.'],
-    ['Recurrent Cold & Cough', 'Support for frequent colds, cough, throat irritation & repeated breathing problems.'],
-    ['Bronchitis', 'A chest problem that can cause ongoing cough, mucus & chest discomfort.'],
-    ['Tonsillitis', 'A throat problem that can cause throat pain, swollen tonsils & difficulty swallowing.'],
-    ['Breathing Difficulties', 'Support for repeated breathlessness, chest discomfort & difficulty breathing.'],
-    ['Recurrent Respiratory Infections', 'Support for frequent infections affecting the nose, throat or chest.']
+    ['Asthma', 'A breathing problem that can cause wheezing, chest tightness, breathlessness & repeated breathing problems.','asthma'],
+    ['Allergic Rhinitis', 'An allergy problem that can cause sneezing, a blocked or runny nose & itching.','allergic-rhinitis'],
+    ['Sinusitis', 'A sinus problem that can cause facial pressure, headache, blocked nose & discomfort.','sinusitis'],
+    ['Recurrent Cold & Cough', 'Support for frequent colds, cough, throat irritation & repeated breathing problems.','recurrent-cold-cough'],
+    ['Bronchitis', 'A chest problem that can cause ongoing cough, mucus & chest discomfort.','bronchitis'],
+    ['Tonsillitis', 'A throat problem that can cause throat pain, swollen tonsils & difficulty swallowing.','tonsillitis'],
+    ['Breathing Difficulties', 'Support for repeated breathlessness, chest discomfort & difficulty breathing.','breathing-difficulties'],
+    ['Recurrent Respiratory Infections', 'Support for frequent infections affecting the nose, throat or chest.','recurrent-respiratory-infections'],
 ];
 ?>
 
@@ -46,7 +46,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'respiratory') ?>.jpg" alt="<?= e($condition[0]) ?>"></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'respiratory') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

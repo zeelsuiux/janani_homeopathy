@@ -3,21 +3,21 @@ $s = settings();
 $page_title = 'Gynaecological Problems | ' . $s['clinic_name'];
 require 'header.php';
 $conditions = [
-    ['PCOD / PCOS', 'We provide personalized homeopathic treatment for PCOD & PCOS to help with hormone imbalance, irregular periods, acne & other related problems..'],
-    ['Irregular Periods', 'Homeopathy care for delayed, early, missed & irregular periods.'],
-    ['Painful Periods', 'Homeopathy care for period cramps, pelvic pain, back pain & other period problems.'],
-    ['Excessive Bleeding', 'Support for very heavy, long-lasting or frequent periods.'],
-    ['Leucorrhoea', 'Homeopathy care for unusual vaginal discharge, irritation & discomfort.'],
-    ['Endometriosis', 'Personalized homeopathy care for pelvic pain, painful periods & other related problems.'],
-    ['Menopausal Complaints', 'Support for hot flashes, mood changes, sleep problems & other menopause symptoms.'],
-    ['Infertility Support', 'Personalized support for couples by understanding period health, hormone changes, lifestyle & overall health.']
+    ['PCOD / PCOS', 'We provide personalized homeopathic treatment for PCOD & PCOS to help with hormone imbalance, irregular periods, acne & other related problems..','pcod-pcos'],
+    ['Irregular Periods', 'Homeopathy care for delayed, early, missed & irregular periods.', 'irregular-periods'],
+    ['Painful Periods', 'Homeopathy care for period cramps, pelvic pain, back pain & other period problems.','painful-periods'],
+    ['Excessive Bleeding', 'Support for very heavy, long-lasting or frequent periods.','excessive-bleeding'],
+    ['Leucorrhoea', 'Homeopathy care for unusual vaginal discharge, irritation & discomfort.','leucorrhoea'],
+    ['Endometriosis', 'Personalized homeopathy care for pelvic pain, painful periods & other related problems.','endomeriosis'],
+    ['Menopausal Complaints', 'Support for hot flashes, mood changes, sleep problems & other menopause symptoms.','menopausal-complaints'],
+    ['Infertility Support', 'Personalized support for couples by understanding period health, hormone changes, lifestyle & overall health.','infertility-support']
 ];
 ?>
 
 <section class="treatment-hero">
     <div class="container treatment-hero-grid">
         <div>
-            <div class="eyebrow">Women’s Homeopathy Care</div>
+            <div class="eyebrow">Women’s Homeopathy Care</div>as
             <h1>Gynaecological Problems</h1>
             <p>Women’s health problems can affect your body, emotions, relationships & daily life. At our Homeopathy Clinic in Surat, we understand your symptoms, periods, hormone changes, lifestyle & overall health to provide personalized homeopathic treatment for your needs.</p>
             <div class="actions">
@@ -41,7 +41,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'gynaecology') ?>.jpg" alt="<?= e($condition[0]) ?>"></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'gynaecology') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>

@@ -4,22 +4,22 @@ $page_title = 'Bone & Joint Problems | ' . $s['clinic_name'];
 require 'header.php';
 
 $conditions = [
-    ['Arthritis', 'A joint problem that can cause pain, swelling, stiffness & difficulty moving.'],
-    ['Osteoarthritis', 'Joint wear & tear that can cause pain, stiffness & difficulty moving.'],
-    ['Rheumatoid Arthritis', 'An autoimmune joint problem that can cause pain, swelling & stiffness.'],
-    ['Back Pain', 'Support for recurring upper or lower back pain, muscle tension & discomfort.'],
-    ['Cervical Spondylosis', 'A neck problem that can cause neck pain, stiffness & difficulty moving.'],
-    ['Lumbar Spondylosis', 'A lower back problem that can cause pain, stiffness & movement problems.'],
-    ['Sciatica', 'Pain, tingling or numbness that travels from the lower back to the leg.'],
-    ['Joint Pain & Stiffness', 'Support for painful, stiff or difficult-to-move joints affecting daily life.'],
-    ['Gout', 'A joint problem that can cause sudden pain, swelling, redness & tenderness.']
+    ['Arthritis', 'A joint problem that can cause pain, swelling, stiffness & difficulty moving.','arthritis'],
+    ['Osteoarthritis', 'Joint wear & tear that can cause pain, stiffness & difficulty moving.','osteoarthritis'],
+    ['Osteoporosis', 'A bone problem that can cause weak bones, fractures & pain.','osteoporosis'],
+    ['Back Pain', 'Support for recurring upper or lower back pain, muscle tension & discomfort.','back-pain'],
+    ['Cervical Spondylosis', 'A neck problem that can cause neck pain, stiffness & difficulty moving.','cervical-spondylosis'],
+    ['Lumbar Spondylosis', 'A lower back problem that can cause pain, stiffness & movement problems.','lumbar-spondylosis'],
+    ['Sciatica', 'Pain, tingling or numbness that travels from the lower back to the leg.','sciatica'],
+    ['Joint Pain & Stiffness', 'Support for painful, stiff or difficult-to-move joints affecting daily life.','joint-pain-stiffness'],
+    ['Gout', 'A joint problem that can cause sudden pain, swelling, redness & tenderness.','gout'],
 ];
 ?>
 
 <section class="treatment-hero">
     <div class="container treatment-hero-grid">
         <div>
-            <div class="eyebrow">Homeopathy for Bone & Joint Problems</div>
+            <div class="eyebrow">Homeopathy for Bone & Joint Diseases</div>
             <h1>Bone & Joint Problems</h1>
 
             <p>Bone, joint & muscle problems can affect movement, comfort, work, sleep & daily life. Our personalized homeopathy care understands your symptoms, movement, health history, lifestyle & overall health.</p>
@@ -47,7 +47,7 @@ $conditions = [
         <div class="feature-list">
             <?php foreach ($conditions as $conditionIndex => $condition): ?>
                 <div class="feature-card">
-                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'bone-joint') ?>.jpg" alt="<?= e($condition[0]) ?>"></div>
+                    <div class="icon treatment-icon"><img src="assets/images/treatments/<?= e($condition[2] ?? 'bone-joint') ?>.png" alt="<?= e($condition[0]) ?>"></div>
                     <h3><?= e($condition[0]) ?></h3>
                     <p><?= e($condition[1]) ?></p>
                 </div>
