@@ -26,60 +26,40 @@ function service_icon(string $name): string
 ?>
 
 <section class="hero">
-    <div class="container hero-grid" data-slider>
-        <div class="hero-content">
-            <div class="hero-copy is-active" data-slide-content>
-                <div class="eyebrow"><?= e($s['clinic_name']) ?></div>
-                <h1><?= e($s['hero_title']) ?></h1>
-                <p><?= e($s['hero_text']) ?></p>
-                <div class="hero-actions">
-                    <a class="btn" href="appointment.php">Book Appointment</a>
-                    <a class="btn btn-outline" href="treatments.php">Explore Treatments</a>
+    <div class="container" data-slider>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="hero-content">
+                    <div class="hero-copy is-active" data-slide-content>
+                        <h1>Gentle Support for Better Health</h1>
+                        <p>Understand your health concerns with detailed consultation and a care plan designed around your needs.</p>
+                        <div class="hero-actions">
+                            <a class="btn" href="appointment.php">Book Appointment</a>
+                        </div>
+                    </div>
+                    <div class="hero-copy" data-slide-content>
+                        <h1>Care for Chronic Health Concerns</h1>
+                        <p>Explore supportive homeopathic treatment for digestive health, lifestyle concerns and long-term wellness.</p>
+                        <div class="hero-actions">
+                            <a class="btn" href="appointment.php">Book Appointment</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-copy" data-slide-content>
-                <div class="eyebrow">Personalized Care</div>
-                <h1>Gentle Support for Better Health</h1>
-                <p>Understand your health concerns with detailed consultation and a care plan designed around your needs.</p>
-                <div class="hero-actions">
-                    <a class="btn" href="appointment.php">Book Appointment</a>
-                    <a class="btn btn-outline" href="about.php">Meet Our Doctor</a>
+            <button class="slider-arrow slider-prev d-none d-md-block" type="button" data-slider-prev aria-label="Previous image">&#10094;</button>
+            <div class="col-12 col-lg-6">
+                <div class="hero-banner hero-slider">
+                    <div class="hero-slides">
+                        <img class="hero-slide is-active" src="assets/images/home/homeopaty.png" alt="Homeopathy clinic">
+                        <img class="hero-slide" src="assets/images/home/homeslider-2.png" alt="Homeopathy clinic">
+                    </div>
                 </div>
             </div>
-            <div class="hero-copy" data-slide-content>
-                <div class="eyebrow">Holistic Treatment</div>
-                <h1>Care for Chronic Health Concerns</h1>
-                <p>Explore supportive homeopathic treatment for digestive health, lifestyle concerns and long-term wellness.</p>
-                <div class="hero-actions">
-                    <a class="btn" href="appointment.php">Book Appointment</a>
-                    <a class="btn btn-outline" href="gastric-diseases.php">View Treatment</a>
-                </div>
+            <button class="slider-arrow slider-next d-none d-md-block" type="button" data-slider-next aria-label="Next image">&#10095;</button>
+            <div class="slider-dots" aria-label="Slider navigation">
+                <button class="slider-dot is-active" type="button" data-slide-to="0" aria-label="Show image 1"></button>
+                <button class="slider-dot" type="button" data-slide-to="1" aria-label="Show image 2"></button>
             </div>
-            <div class="hero-copy" data-slide-content>
-                <div class="eyebrow">Care for Every Age</div>
-                <h1>Natural Care for Growing Families</h1>
-                <p>Patient-first guidance for children and families with thoughtful follow-ups and personalized support.</p>
-                <div class="hero-actions">
-                    <a class="btn" href="appointment.php">Book Appointment</a>
-                    <a class="btn btn-outline" href="childrens-problems.php">Child Care</a>
-                </div>
-            </div>
-        </div>
-        <button class="slider-arrow slider-prev" type="button" data-slider-prev aria-label="Previous image">&#10094;</button>
-        <div class="hero-banner hero-slider">
-            <div class="hero-slides">
-                <img class="hero-slide is-active" src="assets/images/home/homeopaty.png" alt="Homeopathy clinic">
-                <img class="hero-slide" src="assets/images/doctor.png" alt="Homeopathy doctor consultation">
-                <img class="hero-slide" src="assets/images/treatments/gastric.jpg" alt="Digestive health care">
-                <img class="hero-slide" src="assets/images/treatments/children.jpg" alt="Children's health care">
-            </div>
-        </div>
-        <button class="slider-arrow slider-next" type="button" data-slider-next aria-label="Next image">&#10095;</button>
-        <div class="slider-dots" aria-label="Slider navigation">
-            <button class="slider-dot is-active" type="button" data-slide-to="0" aria-label="Show image 1"></button>
-            <button class="slider-dot" type="button" data-slide-to="1" aria-label="Show image 2"></button>
-            <button class="slider-dot" type="button" data-slide-to="2" aria-label="Show image 3"></button>
-            <button class="slider-dot" type="button" data-slide-to="3" aria-label="Show image 4"></button>
         </div>
     </div>
 </section>
